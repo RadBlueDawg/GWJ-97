@@ -14,6 +14,12 @@ config/name="GWJ 97"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Enums="*uid://crquq564lxmd"
+SceneLoader="*uid://ceiilpy7j670g"
+SceneRepo="*uid://dlt8vrj4tpaid"
+
 [display]
 
 window/stretch/mode="canvas_items"
