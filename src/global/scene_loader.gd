@@ -3,7 +3,7 @@ extends Node
 signal progress_changed(progress)
 signal load_finished
 
-var loadingScreen: PackedScene = preload(SceneRepo.FRAMEWORK.loading_screen)
+var loadingScreen: PackedScene = load(SceneRepo.FRAMEWORK.loading_screen)
 var loadedResource: PackedScene
 var scenePath: String
 var progress: Array = []
