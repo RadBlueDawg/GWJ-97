@@ -15,6 +15,8 @@ class_name PlayerController extends CharacterBody3D
 @export var DEFAULT_SPEED:float = 7.0
 @export var SPRINT_SPEED:float = 3.0
 @export var CROUCH_SPEED:float = -5.0
+@export_group("Jump")
+@export var JUMP_VELOCITY:float = 5.0
 
 var inputDirection:Vector2 = Vector2.ZERO
 var movementVelocity:Vector3 = Vector3.ZERO
@@ -61,3 +63,6 @@ func crouch() -> void:
 	crouchModifier = CROUCH_SPEED
 	STANDING_COLLISION.disabled = true
 	CROUCHING_COLLISION.disabled = false
+
+func jump() -> void:
+	velocity.y += JUMP_VELOCITY
