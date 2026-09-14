@@ -25,6 +25,9 @@ var sprintModifier:float = 0.0
 var crouchModifier:float = 0.0
 var speed:float = 0.0
 
+func _ready() -> void:
+	$StateChartDebugger.enabled = DEBUG
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta

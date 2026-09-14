@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bbfb5mcl6qid8"]
+
+[ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_eicir"]
+[ext_resource type="PackedScene" uid="uid://bg2ivf85gtull" path="res://scenes/weapons/test_weapon.tscn" id="1_vi35b"]
+
+[resource]
+script = ExtResource("1_eicir")
+MODEL = ExtResource("1_vi35b")
+POSITION = Vector3(0.52, 0, -0.845)
+metadata/_custom_type_script = "uid://xgdudhfp15k"
