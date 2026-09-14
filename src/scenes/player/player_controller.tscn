@@ -3,16 +3,47 @@
 [ext_resource type="Script" uid="uid://cqc2actxxsb6" path="res://scenes/player/player_controller.gd" id="1_0cfoe"]
 [ext_resource type="Script" uid="uid://bo3eib68evn8g" path="res://utilities/components/mouse_capture.gd" id="1_d4y06"]
 [ext_resource type="Script" uid="uid://chqsc5wbnvigr" path="res://scenes/player/camera_controller.gd" id="1_iivv4"]
+[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="2_nwn0c"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="4_2k8ub"]
+[ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="5_rkuj1"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="6_ers80"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_nwn0c"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_y4pjd"]
+[ext_resource type="Script" uid="uid://yujlprm82rvy" path="res://utilities/components/player_state_machine.gd" id="9_rkuj1"]
+[ext_resource type="Script" uid="uid://d28lyteh168ko" path="res://scenes/player/states/idle_state.gd" id="10_ers80"]
+[ext_resource type="Script" uid="uid://b2rw3v0f4853t" path="res://scenes/player/states/moving_state.gd" id="12_mxnws"]
+[ext_resource type="Script" uid="uid://c20ysncai06l1" path="res://scenes/player/states/walking_state.gd" id="13_3y0ka"]
+[ext_resource type="Script" uid="uid://qk0w1awnn30" path="res://scenes/player/states/sprinting_state.gd" id="14_3y0ka"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c1sjb"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_c1sjb"]
+size = Vector3(0.1, 0.1, 2)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c1sjb"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=83970830]
+[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "COLLISION")]
 script = ExtResource("1_0cfoe")
+CAMERA = NodePath("CameraController")
+STATE_CHART = NodePath("StateChart")
+COLLISION = NodePath("CollisionShape3D")
+
+[node name="StateChartDebugger" parent="." unique_id=1354678929 instance=ExtResource("2_nwn0c")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 325.0
+offset_bottom = 306.0
+grow_horizontal = 1
+grow_vertical = 1
+initial_node_to_watch = NodePath("../StateChart")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1689121724]
 mesh = SubResource("CapsuleMesh_c1sjb")
+
+[node name="DirectionFinder" type="MeshInstance3D" parent="." unique_id=1395997754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_c1sjb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1826131745]
 shape = SubResource("CapsuleShape3D_c1sjb")
@@ -30,3 +61,100 @@ COMPONENT_MOUSE_CAPTURE = NodePath("../Components/MouseCapture")
 
 [node name="MouseCapture" type="Node" parent="Components" unique_id=958888178]
 script = ExtResource("1_d4y06")
+
+[node name="StateChart" type="Node" parent="." unique_id=1731123593]
+script = ExtResource("4_2k8ub")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart" unique_id=1745463116]
+script = ExtResource("5_rkuj1")
+metadata/_custom_type_script = "uid://c1vp0ojjvaby1"
+
+[node name="Movement" type="Node" parent="StateChart/Root" unique_id=752799265]
+script = ExtResource("6_ers80")
+initial_state = NodePath("Grounded")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Grounded" type="Node" parent="StateChart/Root/Movement" unique_id=1112288220]
+script = ExtResource("6_ers80")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Idle" type="Node" parent="StateChart/Root/Movement/Grounded" unique_id=131384820]
+script = ExtResource("7_nwn0c")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnMoving" type="Node" parent="StateChart/Root/Movement/Grounded/Idle" unique_id=288857121]
+script = ExtResource("8_y4pjd")
+to = NodePath("../../Moving")
+event = &"onMoving"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Moving" type="Node" parent="StateChart/Root/Movement/Grounded" unique_id=352552850]
+script = ExtResource("6_ers80")
+initial_state = NodePath("Walking")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="Walking" type="Node" parent="StateChart/Root/Movement/Grounded/Moving" unique_id=1886748433]
+script = ExtResource("7_nwn0c")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="Sprinting" type="Node" parent="StateChart/Root/Movement/Grounded/Moving" unique_id=919297273]
+script = ExtResource("7_nwn0c")
+metadata/_custom_type_script = "uid://cytafq8i1y8qm"
+
+[node name="OnIdle" type="Node" parent="StateChart/Root/Movement/Grounded/Moving" unique_id=284361876]
+script = ExtResource("8_y4pjd")
+to = NodePath("../../Idle")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnWalking" type="Node" parent="StateChart/Root/Movement/Grounded/Moving" unique_id=104191638]
+script = ExtResource("8_y4pjd")
+to = NodePath("../Walking")
+event = &"onWalking"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="OnSprinting" type="Node" parent="StateChart/Root/Movement/Grounded/Moving" unique_id=1826265309]
+script = ExtResource("8_y4pjd")
+to = NodePath("../Sprinting")
+event = &"onSprinting"
+delay_in_seconds = "0.0"
+metadata/_custom_type_script = "uid://cf1nsco3w0mf6"
+
+[node name="Airborne" type="Node" parent="StateChart/Root/Movement" unique_id=1422450578]
+script = ExtResource("6_ers80")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="StateMachine" type="Node" parent="." unique_id=1012628573 node_paths=PackedStringArray("PLAYER_CONTROLLER")]
+unique_name_in_owner = true
+script = ExtResource("9_rkuj1")
+PLAYER_CONTROLLER = NodePath("..")
+
+[node name="MovementState" type="Node" parent="StateMachine" unique_id=460914118]
+
+[node name="Grounded State" type="Node" parent="StateMachine/MovementState" unique_id=1048427320]
+
+[node name="IdleState" type="Node" parent="StateMachine/MovementState/Grounded State" unique_id=473773961]
+script = ExtResource("10_ers80")
+
+[node name="MovingState" type="Node" parent="StateMachine/MovementState/Grounded State" unique_id=800906083]
+script = ExtResource("12_mxnws")
+
+[node name="WalkingState" type="Node" parent="StateMachine/MovementState/Grounded State/MovingState" unique_id=628548647]
+script = ExtResource("13_3y0ka")
+
+[node name="SprintingState" type="Node" parent="StateMachine/MovementState/Grounded State/MovingState" unique_id=934420130]
+script = ExtResource("14_3y0ka")
+
+[node name="AirborneState" type="Node" parent="StateMachine/MovementState" unique_id=2141133202]
+
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/Grounded State/IdleState" method="_on_idle_state_processing"]
+[connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded/Moving" to="StateMachine/MovementState/Grounded State/MovingState" method="_on_moving_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/Grounded State/MovingState/WalkingState" method="_on_walking_state_entered"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Moving/Walking" to="StateMachine/MovementState/Grounded State/MovingState/WalkingState" method="_on_walking_state_processing"]
+[connection signal="state_entered" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/Grounded State/MovingState/SprintingState" method="_on_sprinting_state_entered"]
+[connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Moving/Sprinting" to="StateMachine/MovementState/Grounded State/MovingState/SprintingState" method="_on_sprinting_state_processing"]

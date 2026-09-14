@@ -10,6 +10,9 @@ albedo_color = Color(1.4138408e-06, 0.37776694, 0.011414689, 1)
 material = SubResource("StandardMaterial3D_gjowx")
 size = Vector2(100, 100)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c1sjb"]
+size = Vector3(100, 1, 100)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x25rp"]
 albedo_color = Color(0.77014947, 0.5600671, 0.9887832, 1)
 
@@ -41,8 +44,13 @@ material = SubResource("StandardMaterial3D_o6mel")
 [node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("2_x25rp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.195, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=736178680]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=214365766]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=736178680]
 mesh = SubResource("PlaneMesh_c1sjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2119634419]
+shape = SubResource("BoxShape3D_c1sjb")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=302416000]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0562763, 2.7796917, -5.949232)
