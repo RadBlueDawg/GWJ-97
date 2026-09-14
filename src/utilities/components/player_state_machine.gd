@@ -8,3 +8,4 @@ func _process(delta: float) -> void:
 	if PLAYER_CONTROLLER:
 		PLAYER_CONTROLLER.STATE_CHART.set_expression_property("Player Velocity", PLAYER_CONTROLLER.velocity)
 		PLAYER_CONTROLLER.STATE_CHART.set_expression_property("Player Hitting Head", PLAYER_CONTROLLER.CROUCH_CHECK.is_colliding())
+		PLAYER_CONTROLLER.STATE_CHART.set_expression_property("Looking At: ", PLAYER_CONTROLLER.INTERACTION_RAYCAST.currentObject)

@@ -52,12 +52,12 @@ material = SubResource("StandardMaterial3D_o6mel")
 [node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("2_x25rp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.195, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=214365766]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=214365766]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=736178680]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=736178680]
 mesh = SubResource("PlaneMesh_c1sjb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2119634419]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=2119634419]
 shape = SubResource("BoxShape3D_c1sjb")
 
 [node name="PurpleSphere" type="StaticBody3D" parent="." unique_id=1952246064]
