@@ -8,10 +8,15 @@ class_name CameraController extends Node3D
 @export_group("Camera Tilt")
 @export_range(-90, -60) var TILT_LOWER_LIMIT:int = -90
 @export_range(60, 90) var TILT_UPPER_LIMIT:int = 90
+@export_group("Crouch Vertical Movement")
+@export var CROUCH_OFFSET:float = 0.0
+@export var CROUCH_SPEED:float = 3.0
+
+const DEFAULT_HEIGHT:float = 0.5
 
 var totalRotation:Vector3
 
-func _process(_delta: float) -> void:
+func _process(_delta:float) -> void:
 	update_camera_rotation(COMPONENT_MOUSE_CAPTURE.mouseInput)
 
 func update_camera_rotation(input:Vector2) -> void:
@@ -26,3 +31,7 @@ func update_camera_rotation(input:Vector2) -> void:
 	PLAYER_CONTROLLER.update_rotation(playerRotation)
 	
 	rotation.z = 0.0
+
+func update_camera_height(delta:float, direction:int) -> void:
+	if position.y >= CROUCH_OFFSET and position.y <= DEFAULT_HEIGHT:
+		position.y = clampf(position.y + (CROUCH_SPEED * direction) * delta, CROUCH_OFFSET, DEFAULT_HEIGHT)

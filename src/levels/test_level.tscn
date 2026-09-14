@@ -19,11 +19,15 @@ albedo_color = Color(0.77014947, 0.5600671, 0.9887832, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_gmgay"]
 material = SubResource("StandardMaterial3D_x25rp")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_c1sjb"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxyin"]
 albedo_color = Color(0.69241565, 0.7023241, 0.25769252, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_x25rp"]
 material = SubResource("StandardMaterial3D_uxyin")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uxyin"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmgay"]
 albedo_color = Color(0.5882353, 0.007843138, 0.09019608, 1)
@@ -31,11 +35,15 @@ albedo_color = Color(0.5882353, 0.007843138, 0.09019608, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_w7r7j"]
 material = SubResource("StandardMaterial3D_gmgay")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjowx"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6mel"]
 albedo_color = Color(0.22904354, 0.34771457, 0.60755837, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_e7anx"]
 material = SubResource("StandardMaterial3D_o6mel")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrt6s"]
 
 [node name="TestLevel" type="Node3D" unique_id=2091154705]
 
@@ -52,18 +60,38 @@ mesh = SubResource("PlaneMesh_c1sjb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2119634419]
 shape = SubResource("BoxShape3D_c1sjb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=302416000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0562763, 2.7796917, -5.949232)
+[node name="PurpleSphere" type="StaticBody3D" parent="." unique_id=1952246064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PurpleSphere" unique_id=302416000]
 mesh = SubResource("SphereMesh_gmgay")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1288814163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.920826, 2.7796917, 0.20559168)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleSphere" unique_id=501455104]
+shape = SubResource("SphereShape3D_c1sjb")
+
+[node name="YellowSphere" type="StaticBody3D" parent="." unique_id=1630330732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="YellowSphere" unique_id=1288814163]
 mesh = SubResource("SphereMesh_x25rp")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=96801861]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6173105, 2.7796917, 9.001961)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="YellowSphere" unique_id=1998204454]
+shape = SubResource("SphereShape3D_uxyin")
+
+[node name="RedSphere" type="StaticBody3D" parent="." unique_id=871749369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RedSphere" unique_id=96801861]
 mesh = SubResource("SphereMesh_w7r7j")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1423628968]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.475865, 2.7796917, 1.0571566)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RedSphere" unique_id=742278029]
+shape = SubResource("SphereShape3D_gjowx")
+
+[node name="BlueSphere" type="StaticBody3D" parent="." unique_id=1383716170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BlueSphere" unique_id=1423628968]
 mesh = SubResource("SphereMesh_e7anx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueSphere" unique_id=1269494631]
+shape = SubResource("SphereShape3D_xrt6s")
