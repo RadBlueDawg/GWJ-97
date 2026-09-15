@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blxp3gpwfefdj"]
+
+[ext_resource type="Texture2D" uid="uid://clel8bfuc7rit" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/catacombs_9.png" id="1_t2cvm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtbe4"]
+albedo_texture = ExtResource("1_t2cvm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c1sjb"]
+material = SubResource("StandardMaterial3D_jtbe4")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 3.0
+
+[node name="Node3D" type="Node3D" unique_id=513238004]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=150022720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_c1sjb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1211617856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2139175, 0)
+light_color = Color(0.92891246, 0.63266903, 0, 1)
+light_energy = 5.813
+shadow_enabled = true
