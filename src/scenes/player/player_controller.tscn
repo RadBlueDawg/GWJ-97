@@ -35,6 +35,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_uxyin"]
 
 [node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST")]
+collision_layer = 2
 script = ExtResource("1_0cfoe")
 CAMERA = NodePath("CameraController")
 STATE_CHART = NodePath("StateChart")
@@ -87,8 +88,9 @@ script = ExtResource("4_kqh78")
 script = ExtResource("1_d4y06")
 MOUSE_SENSITIVITY = 0.025
 
-[node name="WeaponController" type="Node" parent="Components" unique_id=10960801 node_paths=PackedStringArray("WEAPON_MODEL_PARENT", "WEAPON_STATE_CHART")]
+[node name="WeaponController" type="Node" parent="Components" unique_id=10960801 node_paths=PackedStringArray("CAMERA", "WEAPON_MODEL_PARENT", "WEAPON_STATE_CHART")]
 script = ExtResource("6_0l0yx")
+CAMERA = NodePath("../../CameraController/Camera3D")
 CURRENT_WEAPON = ExtResource("7_3nb03")
 WEAPON_MODEL_PARENT = NodePath("../../CameraController/Camera3D")
 WEAPON_STATE_CHART = NodePath("../../WeaponStateChart")
