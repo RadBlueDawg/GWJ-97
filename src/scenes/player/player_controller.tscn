@@ -86,7 +86,7 @@ script = ExtResource("4_kqh78")
 
 [node name="MouseCapture" type="Node" parent="Components" unique_id=958888178]
 script = ExtResource("1_d4y06")
-MOUSE_SENSITIVITY = 0.025
+MOUSE_SENSITIVITY = 0.01
 
 [node name="WeaponController" type="Node" parent="Components" unique_id=10960801 node_paths=PackedStringArray("CAMERA", "WEAPON_MODEL_PARENT", "WEAPON_STATE_CHART")]
 script = ExtResource("6_0l0yx")
