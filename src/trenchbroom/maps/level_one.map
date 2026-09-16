@@ -23,7 +23,7 @@
 ( 0 -16 0 ) ( 1 -16 0 ) ( 0 -15 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
 ( 192 112 192 ) ( 192 113 192 ) ( 193 112 192 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 -1 0 16 ] 0 1 1
 ( 192 112 16 ) ( 193 112 16 ) ( 192 112 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
-( 192 112 16 ) ( 192 112 17 ) ( 192 113 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
+( 480 112 16 ) ( 480 112 17 ) ( 480 113 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
 }
 // brush 2
 {
@@ -31,7 +31,7 @@
 ( -320 304 0 ) ( -320 304 1 ) ( -319 304 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
 ( -320 304 0 ) ( -319 304 0 ) ( -320 305 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
 ( -192 496 192 ) ( -192 497 192 ) ( -191 496 192 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
-( -192 496 16 ) ( -191 496 16 ) ( -192 496 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( -192 464 16 ) ( -191 464 16 ) ( -192 464 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( -192 496 16 ) ( -192 496 17 ) ( -192 497 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
 }
 // brush 3
@@ -41,7 +41,7 @@
 ( 0 176 0 ) ( 1 176 0 ) ( 0 177 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 270 1 1
 ( 192 304 192 ) ( 192 305 192 ) ( 193 304 192 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
 ( 192 304 16 ) ( 193 304 16 ) ( 192 304 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 270 1 1
-( 192 304 16 ) ( 192 304 17 ) ( 192 305 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 16 ] [ 0 0 -1 0 ] 270 1 1
+( 480 304 16 ) ( 480 304 17 ) ( 480 305 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 16 ] [ 0 0 -1 0 ] 90 1 1
 }
 // brush 4
 {
@@ -49,28 +49,19 @@
 ( -128 304 0 ) ( -128 304 1 ) ( -127 304 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
 ( -128 304 0 ) ( -127 304 0 ) ( -128 305 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
 ( 0 496 192 ) ( 0 497 192 ) ( 1 496 192 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
-( 0 496 16 ) ( 1 496 16 ) ( 0 496 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( 0 464 16 ) ( 1 464 16 ) ( 0 464 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 0 496 16 ) ( 0 496 17 ) ( 0 497 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
 }
 // brush 5
-{
-( -192 304 0 ) ( -192 305 0 ) ( -192 304 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 304 0 ) ( -192 304 1 ) ( -191 304 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 304 0 ) ( -191 304 0 ) ( -192 305 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -128 496 16 ) ( -128 497 16 ) ( -127 496 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -128 496 16 ) ( -127 496 16 ) ( -128 496 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -128 496 16 ) ( -128 496 17 ) ( -128 497 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 6
 {
 ( 0 112 0 ) ( 0 113 0 ) ( 0 112 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 16 ] 180 1 1
 ( 0 112 0 ) ( 0 112 1 ) ( 1 112 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 16 ] 180 1 1
 ( 0 112 0 ) ( 1 112 0 ) ( 0 113 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 180 1 1
 ( 96 192 16 ) ( 96 193 16 ) ( 97 192 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 180 1 1
 ( 96 176 16 ) ( 97 176 16 ) ( 96 176 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 16 ] 90 1 1
-( 224 192 16 ) ( 224 192 17 ) ( 224 193 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 16 ] 0 1 1
+( 480 192 16 ) ( 480 192 17 ) ( 480 193 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 16 ] 180 1 1
 }
-// brush 7
+// brush 6
 {
 ( -320 -32 0 ) ( -320 -31 0 ) ( -320 -32 1 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( -320 -32 0 ) ( -320 -32 1 ) ( -319 -32 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -79,7 +70,7 @@
 ( 0 -16 16 ) ( 1 -16 16 ) ( 0 -16 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 0 -16 16 ) ( 0 -16 17 ) ( 0 -15 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-// brush 8
+// brush 7
 {
 ( -336 -16 0 ) ( -336 -15 0 ) ( -336 -16 1 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( -336 -16 0 ) ( -336 -16 1 ) ( -335 -16 0 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -87,5 +78,176 @@
 ( -320 304 192 ) ( -320 305 192 ) ( -319 304 192 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 1 0 0 0 ] [ 0 -1 0 0 ] 270 1 1
 ( -320 304 16 ) ( -319 304 16 ) ( -320 304 17 ) "Dungeon Crawl Stone Soup/catacombs_0" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( -320 304 16 ) ( -320 304 17 ) ( -320 305 16 ) "Dungeon Crawl Stone Soup/catacombs_0" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 8
+{
+( 480 16 0 ) ( 480 17 0 ) ( 480 16 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+( 480 -16 0 ) ( 480 -16 1 ) ( 481 -16 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 480 16 0 ) ( 481 16 0 ) ( 480 17 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
+( 496 192 16 ) ( 496 193 16 ) ( 497 192 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
+( 496 304 16 ) ( 497 304 16 ) ( 496 304 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 800 192 16 ) ( 800 192 17 ) ( 800 193 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 9
+{
+( 608 304 0 ) ( 608 305 0 ) ( 608 304 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 624 304 0 ) ( 624 304 1 ) ( 625 304 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 624 304 0 ) ( 625 304 0 ) ( 624 305 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 672 432 16 ) ( 672 433 16 ) ( 673 432 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 672 464 16 ) ( 673 464 16 ) ( 672 464 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 270 1 1
+( 672 432 16 ) ( 672 432 17 ) ( 672 433 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 10
+{
+( -192 288 0 ) ( -192 289 0 ) ( -192 288 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
+( -192 304 0 ) ( -192 304 1 ) ( -191 304 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -192 288 0 ) ( -191 288 0 ) ( -192 289 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( -128 528 16 ) ( -128 529 16 ) ( -127 528 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( -128 464 16 ) ( -127 464 16 ) ( -128 464 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -128 528 16 ) ( -128 528 17 ) ( -128 529 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+}
+// brush 11
+{
+( -320 496 0 ) ( -320 497 0 ) ( -320 496 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+( -320 464 0 ) ( -320 464 1 ) ( -319 464 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( -320 496 0 ) ( -319 496 0 ) ( -320 497 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( -304 672 16 ) ( -304 673 16 ) ( -303 672 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( -304 784 16 ) ( -303 784 16 ) ( -304 784 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( 0 672 16 ) ( 0 672 17 ) ( 0 673 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+}
+// brush 12
+{
+( 0 592 0 ) ( 0 593 0 ) ( 0 592 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 -16 ] 270 1 1
+( 0 592 0 ) ( 0 592 1 ) ( 1 592 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 -16 ] 270 1 1
+( 0 592 0 ) ( 1 592 0 ) ( 0 593 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 270 1 1
+( 96 672 16 ) ( 96 673 16 ) ( 97 672 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 270 1 1
+( 96 656 16 ) ( 97 656 16 ) ( 96 656 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 -16 ] 180 1 1
+( 160 672 16 ) ( 160 672 17 ) ( 160 673 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 -16 ] 0 1 1
+}
+// brush 13
+{
+( 160 496 0 ) ( 160 497 0 ) ( 160 496 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
+( 160 464 0 ) ( 160 464 1 ) ( 161 464 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 270 1 1
+( 160 496 0 ) ( 161 496 0 ) ( 160 497 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 0 1 1
+( 176 672 16 ) ( 176 673 16 ) ( 177 672 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 0 1 1
+( 176 784 16 ) ( 177 784 16 ) ( 176 784 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 270 1 1
+( 480 672 16 ) ( 480 672 17 ) ( 480 673 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 270 1 1
+}
+// brush 14
+{
+( 480 496 0 ) ( 480 497 0 ) ( 480 496 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 0 ] 270 1 1
+( 480 464 0 ) ( 480 464 1 ) ( 481 464 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 480 496 0 ) ( 481 496 0 ) ( 480 497 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 496 672 16 ) ( 496 673 16 ) ( 497 672 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 496 784 16 ) ( 497 784 16 ) ( 496 784 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 800 672 16 ) ( 800 672 17 ) ( 800 673 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+}
+// brush 15
+{
+( 160 816 0 ) ( 160 817 0 ) ( 160 816 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 0 ] 270 1 1
+( 160 784 0 ) ( 160 784 1 ) ( 161 784 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 160 816 0 ) ( 161 816 0 ) ( 160 817 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 176 992 16 ) ( 176 993 16 ) ( 177 992 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 176 1104 16 ) ( 177 1104 16 ) ( 176 1104 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 480 992 16 ) ( 480 992 17 ) ( 480 993 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+}
+// brush 16
+{
+( 160 1296 0 ) ( 160 1297 0 ) ( 160 1296 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+( 160 1264 0 ) ( 160 1264 1 ) ( 161 1264 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 160 1296 0 ) ( 161 1296 0 ) ( 160 1297 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
+( 176 1472 16 ) ( 176 1473 16 ) ( 177 1472 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 90 1 1
+( 176 1584 16 ) ( 177 1584 16 ) ( 176 1584 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 480 1472 16 ) ( 480 1472 17 ) ( 480 1473 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 17
+{
+( 288 1088 0 ) ( 288 1089 0 ) ( 288 1088 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 0 ] 270 1 1
+( 288 1104 0 ) ( 288 1104 1 ) ( 289 1104 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 288 1088 0 ) ( 289 1088 0 ) ( 288 1089 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 352 1328 16 ) ( 352 1329 16 ) ( 353 1328 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 270 1 1
+( 352 1264 16 ) ( 353 1264 16 ) ( 352 1264 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 352 1328 16 ) ( 352 1328 17 ) ( 352 1329 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 0 ] 270 1 1
+}
+// brush 18
+{
+( 832 816 0 ) ( 832 817 0 ) ( 832 816 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+( 832 784 0 ) ( 832 784 1 ) ( 833 784 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( 832 816 0 ) ( 833 816 0 ) ( 832 817 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( 848 992 16 ) ( 848 993 16 ) ( 849 992 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( 848 1104 16 ) ( 849 1104 16 ) ( 848 1104 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( 1152 992 16 ) ( 1152 992 17 ) ( 1152 993 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+}
+// brush 19
+{
+( 1152 816 0 ) ( 1152 817 0 ) ( 1152 816 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 270 1 1
+( 1152 784 0 ) ( 1152 784 1 ) ( 1153 784 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 1152 816 0 ) ( 1153 816 0 ) ( 1152 817 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 270 1 1
+( 1168 992 16 ) ( 1168 993 16 ) ( 1169 992 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 270 1 1
+( 1168 1104 16 ) ( 1169 1104 16 ) ( 1168 1104 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 180 1 1
+( 1472 992 16 ) ( 1472 992 17 ) ( 1472 993 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 180 1 1
+}
+// brush 20
+{
+( 1152 1136 0 ) ( 1152 1137 0 ) ( 1152 1136 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 90 1 1
+( 1152 1104 0 ) ( 1152 1104 1 ) ( 1153 1104 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1152 1136 0 ) ( 1153 1136 0 ) ( 1152 1137 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( 1168 1312 16 ) ( 1168 1313 16 ) ( 1169 1312 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( 1168 1424 16 ) ( 1169 1424 16 ) ( 1168 1424 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1472 1312 16 ) ( 1472 1312 17 ) ( 1472 1313 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 21
+{
+( 720 1584 0 ) ( 720 1585 0 ) ( 720 1584 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+( 720 1552 0 ) ( 720 1552 1 ) ( 721 1552 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 0 -1 0 ] 90 1 1
+( 720 1584 0 ) ( 721 1584 0 ) ( 720 1585 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 -1 0 -16 ] 180 1 1
+( 736 1760 16 ) ( 736 1761 16 ) ( 737 1760 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 -1 0 -16 ] 180 1 1
+( 736 1872 16 ) ( 737 1872 16 ) ( 736 1872 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 0 -1 0 ] 90 1 1
+( 1040 1760 16 ) ( 1040 1760 17 ) ( 1040 1761 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 90 1 1
+}
+// brush 22
+{
+( 480 1392 0 ) ( 480 1393 0 ) ( 480 1392 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 16 ] [ 0 0 -1 16 ] 180 1 1
+( 480 1392 0 ) ( 480 1392 1 ) ( 481 1392 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 16 ] 180 1 1
+( 480 1392 0 ) ( 481 1392 0 ) ( 480 1393 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 16 ] 180 1 1
+( 576 1472 16 ) ( 576 1473 16 ) ( 577 1472 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 16 ] 180 1 1
+( 576 1456 16 ) ( 577 1456 16 ) ( 576 1456 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 16 ] 90 1 1
+( 848 1472 16 ) ( 848 1472 17 ) ( 848 1473 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 -16 ] [ 0 0 -1 16 ] 180 1 1
+}
+// brush 23
+{
+( 848 1376 0 ) ( 848 1377 0 ) ( 848 1376 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+( 848 1392 0 ) ( 848 1392 1 ) ( 849 1392 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 0 -1 0 ] 90 1 1
+( 848 1376 0 ) ( 849 1376 0 ) ( 848 1377 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 -1 0 -16 ] 180 1 1
+( 912 1616 16 ) ( 912 1617 16 ) ( 913 1616 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 -1 0 -16 ] 180 1 1
+( 912 1552 16 ) ( 913 1552 16 ) ( 912 1552 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 0 -1 0 ] 90 1 1
+( 912 1616 16 ) ( 912 1616 17 ) ( 912 1617 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 180 1 1
+}
+// brush 24
+{
+( 480 912 0 ) ( 480 913 0 ) ( 480 912 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 16 ] 0 1 1
+( 672 912 0 ) ( 672 912 1 ) ( 673 912 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 16 ] 90 1 1
+( 672 912 0 ) ( 673 912 0 ) ( 672 913 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( 768 992 16 ) ( 768 993 16 ) ( 769 992 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 90 1 1
+( 768 976 16 ) ( 769 976 16 ) ( 768 976 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 16 ] 0 1 1
+( 832 992 16 ) ( 832 992 17 ) ( 832 993 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 16 ] 180 1 1
+}
+// brush 25
+{
+( 1280 1408 0 ) ( 1280 1409 0 ) ( 1280 1408 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 180 1 1
+( 1280 1424 0 ) ( 1280 1424 1 ) ( 1281 1424 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 0 -1 0 ] 90 1 1
+( 1280 1408 0 ) ( 1281 1408 0 ) ( 1280 1409 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( 1344 1648 16 ) ( 1344 1649 16 ) ( 1345 1648 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 0 ] [ 0 -1 0 -16 ] 180 1 1
+( 1344 1744 16 ) ( 1345 1744 16 ) ( 1344 1744 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1344 1648 16 ) ( 1344 1648 17 ) ( 1344 1649 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 0 ] 180 1 1
+}
+// brush 26
+{
+( 1040 1680 0 ) ( 1040 1681 0 ) ( 1040 1680 1 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 -1 0 -16 ] [ 0 0 -1 16 ] 180 1 1
+( 1040 1680 0 ) ( 1040 1680 1 ) ( 1041 1680 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 0 -1 16 ] 180 1 1
+( 1040 1680 0 ) ( 1041 1680 0 ) ( 1040 1681 0 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 -1 0 -16 ] 180 1 1
+( 1136 1760 16 ) ( 1136 1761 16 ) ( 1137 1760 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 1 0 0 -16 ] [ 0 -1 0 -16 ] 180 1 1
+( 1136 1744 16 ) ( 1137 1744 16 ) ( 1136 1744 17 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ -1 0 0 16 ] [ 0 0 -1 16 ] 90 1 1
+( 1280 1760 16 ) ( 1280 1760 17 ) ( 1280 1761 16 ) "Dungeon Crawl Stone Soup/tomb_0_new" [ 0 1 0 16 ] [ 0 0 -1 16 ] 180 1 1
 }
 }
