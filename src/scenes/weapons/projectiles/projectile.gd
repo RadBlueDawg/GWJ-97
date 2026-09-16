@@ -31,6 +31,7 @@ func setup(vel:Vector3, dmg:float) -> void:
 func _on_body_entered(body:Node3D) -> void:
 	print("Projectile hit: ", body.name, " at ", global_position)
 	_spawn_impact_marker(global_position)
+	_apply_damage_to_target(body)
 	queue_free()
 
 func _spawn_impact_marker(position:Vector3) -> void:
@@ -47,3 +48,12 @@ func _spawn_impact_marker(position:Vector3) -> void:
 	marker.global_position = position
 	
 	get_tree().create_timer(2.0).timeout.connect(marker.queue_free)
+
+func _apply_damage_to_target(target:Node3D) -> void:
+	var targetComponents = target.get_node_or_null("Components")
+	if not targetComponents:
+		return
+	
+	var healthComponent = targetComponents.get_node_or_null("HealthComponent")
+	if healthComponent and healthComponent.has_method("take_damage"):
+		healthComponent.take_damage(damage, self)

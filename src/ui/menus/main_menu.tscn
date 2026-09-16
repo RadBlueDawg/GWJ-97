@@ -39,10 +39,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -208.0
-offset_top = 57.0
-offset_right = 210.0
-offset_bottom = 145.0
+offset_left = -209.0
+offset_top = 22.0
+offset_right = 209.0
+offset_bottom = 110.0
 grow_horizontal = 2
 text = "GWJ-97 Game"
 label_settings = SubResource("LabelSettings_c1sjb")
@@ -54,32 +54,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -252.0
-offset_top = -388.0
-offset_right = 248.0
-offset_bottom = -126.0
+offset_left = -109.5
+offset_top = -191.0
+offset_right = 109.5
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1596877069]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=553925747]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=30668112]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=575143447]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
 text = "Quit"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=171121562]
@@ -88,7 +84,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
+offset_top = -110.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 30
@@ -110,6 +106,7 @@ label_settings = SubResource("LabelSettings_5ssi0")
 layout_mode = 2
 size_flags_horizontal = 10
 texture = ExtResource("2_qc8qn")
+expand_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

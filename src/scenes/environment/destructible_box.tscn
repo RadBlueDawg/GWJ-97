@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c640a78q5q8ly"]
+
+[ext_resource type="Script" uid="uid://dab6ecc3cg1g1" path="res://scenes/environment/destructible_box.gd" id="1_eeu0i"]
+[ext_resource type="Script" uid="uid://cnxm14583xc8h" path="res://utilities/components/health_component.gd" id="1_vldpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeu0i"]
+albedo_color = Color(0.8982837, 0.506005, 0.33161318, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqjyt"]
+material = SubResource("StandardMaterial3D_eeu0i")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eeu0i"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="DestructibleBox" type="StaticBody3D" unique_id=1965842738]
+script = ExtResource("1_eeu0i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1804675855]
+mesh = SubResource("BoxMesh_tqjyt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=507155373]
+shape = SubResource("ConcavePolygonShape3D_eeu0i")
+
+[node name="Components" type="Node" parent="." unique_id=452714476]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=1648482793]
+script = ExtResource("1_vldpr")
+MAX_HEALTH = 50.0
+
+[connection signal="died" from="Components/HealthComponent" to="." method="_on_health_component_died"]
