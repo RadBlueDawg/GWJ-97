@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_eicir")
+IS_HITSCAN = false
 MODEL = ExtResource("1_vi35b")
 PROJECTILE = ExtResource("2_4nee8")
 POSITION = Vector3(0.52, 0, -0.845)

@@ -317,6 +317,9 @@ animations = [{
 }]
 
 [node name="TestWeapon" type="AnimatedSprite3D" unique_id=1486333951]
+no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_c1sjb")
+animation = &"cast"
 autoplay = "default"
-frame_progress = 0.9553326
+frame = 13
+frame_progress = 0.092456095
