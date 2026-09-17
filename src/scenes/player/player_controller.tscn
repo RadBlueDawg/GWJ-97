@@ -35,7 +35,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uxyin"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST")]
+[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST") groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_0cfoe")
 CAMERA = NodePath("CameraController")

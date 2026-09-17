@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://be3kvqwbq6bbh"]
+
+[ext_resource type="Script" uid="uid://dnr4uo75otrqv" path="res://scenes/enemies/simple_enemy.gd" id="1_2kgy0"]
+[ext_resource type="Script" uid="uid://cnxm14583xc8h" path="res://utilities/components/health_component.gd" id="1_gsiem"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_hm0mn"]
+[ext_resource type="Texture2D" uid="uid://bl48ga8hf6km6" path="res://assets/sprites/Skelly.png" id="2_ho7jy"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_2kgy0"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_ho7jy"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_fgow6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgow6"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwvii"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlamu"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmdn1"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bguu8"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g21x"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6bu6"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v047c"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp73g"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2okpx"]
+atlas = ExtResource("2_ho7jy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1sjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgow6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwvii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlamu")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmdn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bguu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g21x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6bu6")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v047c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp73g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2okpx")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c1sjb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c1sjb"]
+radius = 5.0
+
+[node name="SimpleEnemy" type="CharacterBody3D" unique_id=647585826 node_paths=PackedStringArray("NAV_AGENT", "STATE_CHART", "HEALTH_COMPONENT", "ANIMATED_SPRITE")]
+script = ExtResource("1_2kgy0")
+NAV_AGENT = NodePath("NavigationAgent3D")
+STATE_CHART = NodePath("StateChart")
+HEALTH_COMPONENT = NodePath("Components/HealthComponent")
+ANIMATED_SPRITE = NodePath("AnimatedSprite3D")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=116037676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11565304, 1.0269485, 0)
+pixel_size = 0.032
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_c1sjb")
+animation = &"attack"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1831999690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_c1sjb")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=517188772]
+target_desired_distance = 1.5
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Components" type="Node" parent="." unique_id=1998652343]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=1522240213]
+script = ExtResource("1_gsiem")
+MAX_HEALTH = 50.0
+metadata/_custom_type_script = "uid://cnxm14583xc8h"
+
+[node name="StateChart" type="Node" parent="." unique_id=1914806792]
+script = ExtResource("2_hm0mn")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart" unique_id=767723120]
+script = ExtResource("3_2kgy0")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root" unique_id=1149534568]
+script = ExtResource("4_ho7jy")
+
+[node name="Follow" type="Node" parent="StateChart/Root" unique_id=1823892216]
+script = ExtResource("4_ho7jy")
+
+[node name="Attack" type="Node" parent="StateChart/Root" unique_id=1266976284]
+script = ExtResource("4_ho7jy")
+
+[node name="Death" type="Node" parent="StateChart/Root" unique_id=554324608]
+script = ExtResource("4_ho7jy")
+
+[node name="OnIdle" type="Node" parent="StateChart/Root" unique_id=265876098]
+script = ExtResource("5_fgow6")
+to = NodePath("../Idle")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+
+[node name="OnFollow" type="Node" parent="StateChart/Root" unique_id=1888595115]
+script = ExtResource("5_fgow6")
+to = NodePath("../Follow")
+event = &"onFollow"
+delay_in_seconds = "0.0"
+
+[node name="OnAttack" type="Node" parent="StateChart/Root" unique_id=60849489]
+script = ExtResource("5_fgow6")
+to = NodePath("../Attack")
+event = &"onAttack"
+delay_in_seconds = "0.0"
+
+[node name="OnDeath" type="Node" parent="StateChart/Root" unique_id=491211233]
+script = ExtResource("5_fgow6")
+to = NodePath("../Death")
+event = &"onDeath"
+delay_in_seconds = "0.0"
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=1746210054]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1313307751]
+shape = SubResource("SphereShape3D_c1sjb")
+debug_color = Color(0.8737592, 0.29658908, 0.47077638, 0.41960785)
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="died" from="Components/HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="state_entered" from="StateChart/Root/Follow" to="." method="_on_follow_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Follow" to="." method="_on_follow_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/Attack" to="." method="_on_attack_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/Death" to="." method="_on_death_state_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://c640a78q5q8ly" path="res://scenes/environment/destructible_box.tscn" id="3_gmgay"]
+[ext_resource type="PackedScene" uid="uid://be3kvqwbq6bbh" path="res://scenes/enemies/simple_enemy.tscn" id="4_w7r7j"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_c1sjb"]
+vertices = PackedVector3Array(-1, 1, -6.75, 0, 1, -7, 0, 1, -49.5, -49.5, 1, -49.5, -49.5, 1, -6, -1, 1, -6, 7, 1, 0.75, 7.5, 1, 5, 9, 1, 5, 7, 1, -0.75, 49.5, 1, 6, 1, 1, -6.75, 1, 1, -5.5, 5.5, 1, -1, 49.5, 1, -49.5, 9.25, 1, 6, 5, 1, -0.75, 0.75, 1, -5, -49.5, 1, 11.5, -6.75, 1, 11.5, -6.5, 1, 10.5, -5, 1, 10.5, -1, 1, 6.5, -1, 1, 5.25, 5, 1, 0.5, -0.75, 1, -5, 0.5, 1, 5, 6, 1, 8.25, 6.25, 1, 8.75, 7.5, 1, 7.25, 7, 1, 7, 7, 1, 5.25, 5.25, 1, 1, 1, 1, 5.25, 4.25, 1, 8.25, 1, 1, 6.75, 0.5, 1, 7, 4, 1, 8.75, 8.75, 1, 7.25, 6.25, 1, 10.25, 5.25, 1, 49.5, 49.5, 1, 49.5, 5.25, 1, 10.5, 4, 1, 10.25, -0.75, 1, 7, -4.5, 1, 10.75, -4.5, 1, 12.5, -5.75, 1, 12.75, -5.75, 1, 49.5, -6.75, 1, 12.5, -49.5, 1, 49.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(0, 5, 4), PackedInt32Array(8, 7, 6), PackedInt32Array(6, 9, 8), PackedInt32Array(8, 9, 10), PackedInt32Array(11, 13, 12), PackedInt32Array(13, 11, 9), PackedInt32Array(9, 11, 2), PackedInt32Array(9, 2, 14), PackedInt32Array(9, 14, 10), PackedInt32Array(10, 15, 8), PackedInt32Array(11, 1, 2), PackedInt32Array(17, 12, 16), PackedInt32Array(16, 12, 13), PackedInt32Array(20, 19, 18), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 20), PackedInt32Array(16, 24, 17), PackedInt32Array(17, 24, 25), PackedInt32Array(25, 24, 26), PackedInt32Array(25, 26, 23), PackedInt32Array(25, 23, 5), PackedInt32Array(5, 23, 20), PackedInt32Array(5, 20, 4), PackedInt32Array(4, 20, 18), PackedInt32Array(30, 29, 27), PackedInt32Array(27, 29, 28), PackedInt32Array(32, 31, 24), PackedInt32Array(24, 31, 33), PackedInt32Array(24, 33, 26), PackedInt32Array(27, 34, 30), PackedInt32Array(30, 34, 31), PackedInt32Array(31, 34, 35), PackedInt32Array(31, 35, 33), PackedInt32Array(34, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(7, 31, 6), PackedInt32Array(6, 31, 32), PackedInt32Array(29, 38, 28), PackedInt32Array(28, 38, 39), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 10), PackedInt32Array(40, 10, 41), PackedInt32Array(40, 42, 39), PackedInt32Array(10, 38, 15), PackedInt32Array(37, 43, 36), PackedInt32Array(36, 43, 44), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(45, 21, 44), PackedInt32Array(44, 21, 22), PackedInt32Array(48, 47, 46), PackedInt32Array(43, 42, 46), PackedInt32Array(46, 42, 40), PackedInt32Array(46, 40, 48), PackedInt32Array(47, 48, 49), PackedInt32Array(49, 48, 50), PackedInt32Array(49, 50, 18), PackedInt32Array(18, 19, 49)]
+agent_height = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjowx"]
 albedo_color = Color(1.4138408e-06, 0.37776694, 0.011414689, 1)
@@ -48,60 +54,66 @@ material = SubResource("StandardMaterial3D_o6mel")
 
 [node name="TestLevel" type="Node3D" unique_id=2091154705]
 
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1649880880]
+navigation_mesh = SubResource("NavigationMesh_c1sjb")
+
+[node name="Ground" type="StaticBody3D" parent="NavigationRegion3D" unique_id=214365766]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground" unique_id=736178680]
+mesh = SubResource("PlaneMesh_c1sjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground" unique_id=2119634419]
+shape = SubResource("BoxShape3D_c1sjb")
+
+[node name="PurpleSphere" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1952246064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/PurpleSphere" unique_id=302416000]
+mesh = SubResource("SphereMesh_gmgay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/PurpleSphere" unique_id=501455104]
+shape = SubResource("SphereShape3D_c1sjb")
+
+[node name="YellowSphere" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1630330732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/YellowSphere" unique_id=1288814163]
+mesh = SubResource("SphereMesh_x25rp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/YellowSphere" unique_id=1998204454]
+shape = SubResource("SphereShape3D_uxyin")
+
+[node name="RedSphere" type="StaticBody3D" parent="NavigationRegion3D" unique_id=871749369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/RedSphere" unique_id=96801861]
+mesh = SubResource("SphereMesh_w7r7j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/RedSphere" unique_id=742278029]
+shape = SubResource("SphereShape3D_gjowx")
+
+[node name="BlueSphere" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1383716170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/BlueSphere" unique_id=1423628968]
+mesh = SubResource("SphereMesh_e7anx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/BlueSphere" unique_id=1269494631]
+shape = SubResource("SphereShape3D_xrt6s")
+
+[node name="DestructibleBox" parent="NavigationRegion3D" unique_id=1965842738 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 6)
+
+[node name="DestructibleBox2" parent="NavigationRegion3D" unique_id=833637453 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0643444, 1, 9.477718)
+
+[node name="DestructibleBox3" parent="NavigationRegion3D" unique_id=650134064 instance=ExtResource("3_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5067034, 1, 11.719013)
+
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("1_46lwt")]
 
 [node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("2_x25rp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.195, 0)
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=214365766]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=736178680]
-mesh = SubResource("PlaneMesh_c1sjb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=2119634419]
-shape = SubResource("BoxShape3D_c1sjb")
-
-[node name="PurpleSphere" type="StaticBody3D" parent="." unique_id=1952246064]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="PurpleSphere" unique_id=302416000]
-mesh = SubResource("SphereMesh_gmgay")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleSphere" unique_id=501455104]
-shape = SubResource("SphereShape3D_c1sjb")
-
-[node name="YellowSphere" type="StaticBody3D" parent="." unique_id=1630330732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="YellowSphere" unique_id=1288814163]
-mesh = SubResource("SphereMesh_x25rp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="YellowSphere" unique_id=1998204454]
-shape = SubResource("SphereShape3D_uxyin")
-
-[node name="RedSphere" type="StaticBody3D" parent="." unique_id=871749369]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="RedSphere" unique_id=96801861]
-mesh = SubResource("SphereMesh_w7r7j")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RedSphere" unique_id=742278029]
-shape = SubResource("SphereShape3D_gjowx")
-
-[node name="BlueSphere" type="StaticBody3D" parent="." unique_id=1383716170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="BlueSphere" unique_id=1423628968]
-mesh = SubResource("SphereMesh_e7anx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueSphere" unique_id=1269494631]
-shape = SubResource("SphereShape3D_xrt6s")
-
-[node name="DestructibleBox" parent="." unique_id=1965842738 instance=ExtResource("3_gmgay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 6)
-
-[node name="DestructibleBox2" parent="." unique_id=833637453 instance=ExtResource("3_gmgay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0643444, 1, 9.477718)
-
-[node name="DestructibleBox3" parent="." unique_id=650134064 instance=ExtResource("3_gmgay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5067034, 1, 11.719013)
+[node name="SimpleEnemy" parent="." unique_id=647585826 instance=ExtResource("4_w7r7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.493607, 0.41471434, -8.59462)
