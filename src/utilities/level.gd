@@ -3,6 +3,8 @@ class_name Level extends Node3D
 @export var DEBUG:bool = false
 @export_category("References")
 @export var LEVEL_TRANSITION:LevelTransition
+@export_category("Settings")
+@export var PLAYER_START_POSITION:Vector3
 
 signal change_level(sceneUID:String)
 

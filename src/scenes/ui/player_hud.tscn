@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://crovouuel0ayy"]
+
+[ext_resource type="Script" uid="uid://b1182vp4vu2oj" path="res://scenes/ui/player_hud.gd" id="1_e6e0b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5cd4"]
+bg_color = Color(0.44445664, 0.44445667, 0.44445652, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1tfe"]
+bg_color = Color(0.5196206, 0.87053335, 0, 1)
+
+[node name="PlayerHUD" type="Control" unique_id=1128540983]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6e0b")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=703223767]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 179.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_o5cd4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w1tfe")
+value = 50.0
+show_percentage = false

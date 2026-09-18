@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_gugbs"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_li1hj"]
-[ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="1_p60i5"]
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="2_k262l"]
 [ext_resource type="Resource" uid="uid://d11ah7yvljrbo" path="res://trenchbroom/gwj-97_settings.tres" id="2_li1hj"]
 [ext_resource type="Material" uid="uid://crcj2b4q32q4n" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/tomb_3_new.tres" id="5_p60i5"]
@@ -84,11 +83,9 @@ points = PackedVector3Array(0.25, 1, 1, 0.25, -1, 1, -0.25, 1, 1, -0.25, -1, 1, 
 [node name="TrenchbroomPrototype" type="Node3D" unique_id=1721609114 node_paths=PackedStringArray("LEVEL_TRANSITION")]
 script = ExtResource("1_gugbs")
 LEVEL_TRANSITION = NodePath("LevelTransition")
+PLAYER_STARTING_POSITION = Vector3(0, 1.032, 0)
 
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("2_k262l")]
-
-[node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("1_p60i5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0322092, 0)
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=1201301453]
 script = ExtResource("1_li1hj")

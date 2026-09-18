@@ -35,7 +35,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uxyin"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST") groups=["player"]]
+[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST", "HEALTH_COMPONENT") groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_0cfoe")
 CAMERA = NodePath("CameraController")
@@ -44,6 +44,7 @@ STANDING_COLLISION = NodePath("StandingCollision")
 CROUCHING_COLLISION = NodePath("CrouchingCollision")
 CROUCH_CHECK = NodePath("ShapeCast3D")
 INTERACTION_RAYCAST = NodePath("CameraController/Camera3D/InteractionRaycast")
+HEALTH_COMPONENT = NodePath("Components/HealthComponent")
 
 [node name="StateChartDebugger" parent="." unique_id=1354678929 instance=ExtResource("2_nwn0c")]
 anchors_preset = 0

@@ -9,6 +9,7 @@ class_name SimpleEnemy extends Enemy
 @export_category("Settings")
 @export var FOLLOW_SPEED:float = 3.0
 @export var MELEE_RANGE:float = 1.6
+@export var MELEE_DAMAGE:float = 25.0
 
 var target:Node3D
 
@@ -81,6 +82,7 @@ func attack() -> void:
 	ANIMATED_SPRITE.play("attack")
 	await ANIMATED_SPRITE.animation_finished
 	print("Slice!")
+	_apply_damage_to_target()
 	
 	if target and HEALTH_COMPONENT.isAlive:
 		if in_attack_range():
@@ -108,3 +110,12 @@ func _on_death_state_entered() -> void:
 	ANIMATED_SPRITE.play("death")
 	await ANIMATED_SPRITE.animation_finished
 	get_tree().create_timer(1.0).timeout.connect(queue_free)
+
+func _apply_damage_to_target() -> void:
+	var targetComponents = target.get_node_or_null("Components")
+	if not targetComponents:
+		return
+	
+	var healthComponent = targetComponents.get_node_or_null("HealthComponent")
+	if healthComponent and healthComponent.has_method("take_damage"):
+		healthComponent.take_damage(MELEE_DAMAGE, self)

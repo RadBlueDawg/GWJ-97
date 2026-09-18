@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="1_46lwt"]
 [ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_o6mel"]
-[ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://c640a78q5q8ly" path="res://scenes/environment/destructible_box.tscn" id="3_gmgay"]
 [ext_resource type="PackedScene" uid="uid://be3kvqwbq6bbh" path="res://scenes/enemies/simple_enemy.tscn" id="4_w7r7j"]
 [ext_resource type="PackedScene" uid="uid://c7x206ms55mp7" path="res://scenes/environment/level_transition.tscn" id="6_e7anx"]
@@ -57,6 +56,8 @@ material = SubResource("StandardMaterial3D_o6mel")
 [node name="TestLevel" type="Node3D" unique_id=2091154705 node_paths=PackedStringArray("LEVEL_TRANSITION")]
 script = ExtResource("1_o6mel")
 LEVEL_TRANSITION = NodePath("LevelTransition")
+PLAYER_START_POSITION = Vector3(0, 1, 0)
+PLAYER_START_ROTATION = Vector3(0, 180, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1649880880]
 navigation_mesh = SubResource("NavigationMesh_c1sjb")
@@ -115,9 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0643444, 1, 9.477718)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5067034, 1, 11.719013)
 
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("1_46lwt")]
-
-[node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("2_x25rp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.195, 0)
 
 [node name="SimpleEnemy" parent="." unique_id=647585826 instance=ExtResource("4_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.493607, 0.41471434, -8.59462)
