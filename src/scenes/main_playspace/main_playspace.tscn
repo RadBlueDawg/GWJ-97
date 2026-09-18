@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://dxuqr432d70id"]
 
-[ext_resource type="Script" uid="uid://c4x4dndfhp68h" path="res://scenes/main_playspace/ui/reticle_draw.gd" id="1_lehbl"]
+[ext_resource type="Script" uid="uid://c4x4dndfhp68h" path="res://scenes/ui/reticle_draw.gd" id="1_lehbl"]
 [ext_resource type="Script" uid="uid://dxo7oct3qnltt" path="res://scenes/main_playspace/managers/game_manager.gd" id="1_pd38t"]
-[ext_resource type="PackedScene" uid="uid://bhl1d87hwrwc2" path="res://levels/level_one.tscn" id="2_pd38t"]
+[ext_resource type="PackedScene" uid="uid://b6a11iihi378e" path="res://levels/trenchbroom_prototype.tscn" id="2_e8ton"]
+[ext_resource type="PackedScene" uid="uid://byg0eayikeksf" path="res://scenes/ui/pause_menu.tscn" id="3_e8ton"]
 
 [node name="MainPlayspace" type="Node" unique_id=313673683]
 
 [node name="Managers" type="Node" parent="." unique_id=1084013818]
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=2006030845]
+[node name="GameManager" type="Node" parent="Managers" unique_id=2006030845 node_paths=PackedStringArray("PAUSE_MENU")]
+process_mode = 3
 script = ExtResource("1_pd38t")
+PAUSE_MENU = NodePath("../../UserInterface/PauseMenu")
 
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=159482136]
 
-[node name="LevelOne" parent="CurrentLevel" unique_id=23460073 instance=ExtResource("2_pd38t")]
+[node name="TrenchbroomPrototype" parent="CurrentLevel" unique_id=1721609114 instance=ExtResource("2_e8ton")]
 
 [node name="UserInterface" type="CanvasLayer" parent="." unique_id=1623847157]
 
@@ -31,3 +34,11 @@ RADIUS = 14.935
 THICKNESS = 2.52
 GAP_ANGLE = 32.575
 SEGMENTS = 2
+
+[node name="PauseMenu" parent="UserInterface" unique_id=1355520267 instance=ExtResource("3_e8ton")]
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2

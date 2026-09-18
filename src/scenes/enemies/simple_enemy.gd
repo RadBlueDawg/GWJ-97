@@ -5,6 +5,7 @@ class_name SimpleEnemy extends Enemy
 @export var STATE_CHART:StateChart
 @export var HEALTH_COMPONENT:HealthComponent
 @export var ANIMATED_SPRITE:AnimatedSprite3D
+@export var TRIGGERABLE_COMPONENT:TriggerableComponent
 @export_category("Settings")
 @export var FOLLOW_SPEED:float = 3.0
 @export var MELEE_RANGE:float = 1.6
@@ -27,7 +28,12 @@ func _physics_process(delta: float) -> void:
 
 func on_triggered() -> void:
 	STATE_CHART.send_event("onFollow")
-
+	
+func get_targetname() -> String:
+	return TRIGGERABLE_COMPONENT.TARGET_NAME if TRIGGERABLE_COMPONENT else ""
+	
+func on_trigger(player) -> void:
+	STATE_CHART.send_event("onFollow")
 
 func _on_follow_state_physics_processing(delta: float) -> void:
 	if not target:

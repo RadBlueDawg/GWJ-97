@@ -7,7 +7,7 @@ var loadingScreen: PackedScene = load(SceneRepo.FRAMEWORK.loading_screen)
 var loadedResource: PackedScene
 var scenePath: String
 var progress: Array = []
-var useSubThreads: bool = true
+var useSubThreads: bool = false
 
 func _ready() -> void:
 	set_process(false)
