@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b6a11iihi378e"]
 
+[ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_gugbs"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_li1hj"]
 [ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="1_p60i5"]
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="2_k262l"]
@@ -9,6 +10,7 @@
 [ext_resource type="Material" uid="uid://bdp1q1jvlnfpu" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/catacombs_10.tres" id="7_k262l"]
 [ext_resource type="Script" uid="uid://djbflq2540mam" path="res://scenes/environment/moving_platform.gd" id="8_k262l"]
 [ext_resource type="PackedScene" uid="uid://blxp3gpwfefdj" path="res://scenes/environment/lamppost.tscn" id="9_su3l1"]
+[ext_resource type="PackedScene" uid="uid://c7x206ms55mp7" path="res://scenes/environment/level_transition.tscn" id="11_olh2k"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_su3l1"]
 _surfaces = [{
@@ -79,7 +81,9 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yicqx"]
 points = PackedVector3Array(0.25, 1, 1, 0.25, -1, 1, -0.25, 1, 1, -0.25, -1, 1, 0.25, 1, -1, 0.25, -1, -1, -0.25, 1, -1, -0.25, -1, -1)
 
-[node name="TrenchbroomPrototype" type="Node3D" unique_id=1721609114]
+[node name="TrenchbroomPrototype" type="Node3D" unique_id=1721609114 node_paths=PackedStringArray("LEVEL_TRANSITION")]
+script = ExtResource("1_gugbs")
+LEVEL_TRANSITION = NodePath("LevelTransition")
 
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("2_k262l")]
 
@@ -128,3 +132,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.2
 
 [node name="entity_4_light_lamppost" parent="FuncGodotMap" unique_id=513238004 instance=ExtResource("9_su3l1")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.90625, -0.34375, -0.40625)
+
+[node name="LevelTransition" parent="." unique_id=1570864238 instance=ExtResource("11_olh2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12)
+DESTINATION_LEVEL = "uid://bhl1d87hwrwc2"

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://urfuelmsqpwo"]
 
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="1_46lwt"]
+[ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_o6mel"]
 [ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://c640a78q5q8ly" path="res://scenes/environment/destructible_box.tscn" id="3_gmgay"]
 [ext_resource type="PackedScene" uid="uid://be3kvqwbq6bbh" path="res://scenes/enemies/simple_enemy.tscn" id="4_w7r7j"]
+[ext_resource type="PackedScene" uid="uid://c7x206ms55mp7" path="res://scenes/environment/level_transition.tscn" id="6_e7anx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c1sjb"]
 vertices = PackedVector3Array(-1, 1, -6.75, 0, 1, -7, 0, 1, -49.5, -49.5, 1, -49.5, -49.5, 1, -6, -1, 1, -6, 7, 1, 0.75, 7.5, 1, 5, 9, 1, 5, 7, 1, -0.75, 49.5, 1, 6, 1, 1, -6.75, 1, 1, -5.5, 5.5, 1, -1, 49.5, 1, -49.5, 9.25, 1, 6, 5, 1, -0.75, 0.75, 1, -5, -49.5, 1, 11.5, -6.75, 1, 11.5, -6.5, 1, 10.5, -5, 1, 10.5, -1, 1, 6.5, -1, 1, 5.25, 5, 1, 0.5, -0.75, 1, -5, 0.5, 1, 5, 6, 1, 8.25, 6.25, 1, 8.75, 7.5, 1, 7.25, 7, 1, 7, 7, 1, 5.25, 5.25, 1, 1, 1, 1, 5.25, 4.25, 1, 8.25, 1, 1, 6.75, 0.5, 1, 7, 4, 1, 8.75, 8.75, 1, 7.25, 6.25, 1, 10.25, 5.25, 1, 49.5, 49.5, 1, 49.5, 5.25, 1, 10.5, 4, 1, 10.25, -0.75, 1, 7, -4.5, 1, 10.75, -4.5, 1, 12.5, -5.75, 1, 12.75, -5.75, 1, 49.5, -6.75, 1, 12.5, -49.5, 1, 49.5)
@@ -52,7 +54,9 @@ material = SubResource("StandardMaterial3D_o6mel")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrt6s"]
 
-[node name="TestLevel" type="Node3D" unique_id=2091154705]
+[node name="TestLevel" type="Node3D" unique_id=2091154705 node_paths=PackedStringArray("LEVEL_TRANSITION")]
+script = ExtResource("1_o6mel")
+LEVEL_TRANSITION = NodePath("LevelTransition")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1649880880]
 navigation_mesh = SubResource("NavigationMesh_c1sjb")
@@ -117,3 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.195, 0)
 
 [node name="SimpleEnemy" parent="." unique_id=647585826 instance=ExtResource("4_w7r7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.493607, 0.41471434, -8.59462)
+
+[node name="LevelTransition" parent="." unique_id=1570864238 instance=ExtResource("6_e7anx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 32)
+DESTINATION_LEVEL = "uid://b6a11iihi378e"

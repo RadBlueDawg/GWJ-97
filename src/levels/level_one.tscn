@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://bhl1d87hwrwc2"]
 
+[ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_jj3p3"]
 [ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="1_tfbuk"]
 [ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="2_4wl7b"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_m04wh"]
 [ext_resource type="Resource" uid="uid://d11ah7yvljrbo" path="res://trenchbroom/gwj-97_settings.tres" id="4_hu4x8"]
 [ext_resource type="Material" uid="uid://cox25l4aet1yr" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/tomb_0_new.tres" id="5_m04wh"]
 [ext_resource type="Material" uid="uid://68qg5t3u1kti" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/catacombs_0.tres" id="6_hu4x8"]
+[ext_resource type="PackedScene" uid="uid://c7x206ms55mp7" path="res://scenes/environment/level_transition.tscn" id="7_hu4x8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c1sjb"]
 vertices = PackedVector3Array(10, 6.5, -9.5, 10, 6.5, -6.25, 14.25, 6.5, -6.25, 14.25, 6.5, -9.5, 0.25, 1, -0.5, 4.25, 1, -0.25, 5, 1, -0.25, 29.25, 1, 14.75, 30, 1, 14.75, 34, 1, 14.5, 9, 1, -0.5, 9.25, 1, -4.5, 15, 1, -4.5, 15.25, 1, -0.5, 19.25, 1, -0.25, 9.25, 1, 19.75, 9, 1, 15.75, 5, 1, 15.5, 40, 1, 10.5, 40.25, 1, 14.5, 44.25, 1, 14.75, 49, 1, 28, 49.25, 1, 32, 53.25, 1, 32.25, 34.25, 1, 10.5, 34, 1, 5.75, 20.25, 1, 5.75, 24, 1, 14.75, 58, 1, 23.25, 49.25, 1, 23.25, 49.25, 1, 26.75, 54, 1, 32.25, 58, 1, 32, 49, 1, 5.75, 40.25, 1, 5.75, 40.25, 1, 9.25, 45, 1, 14.75, 49, 1, 14.5, 24, 1, -9.25, 15.25, 1, -9.25, 15.25, 1, -5.75, 20, 1, -0.25, 24, 1, -0.5, 3.75, 1, 15.75, 0.25, 1, 15.75, 0.25, 1, 24.5, 9, 1, 24.5, 9.25, 1, 20.5, 44.25, 1, 28, 45, 1, 27, 18.75, 1, 5.75, 19.25, 1, 5.25, 48.75, 1, 27.25, 34.25, 1, 9.75, 39.75, 1, 9.75, 44, 1, 45.5, 44.25, 1, 41.5, 44.25, 1, 40.75, 44, 1, 36.75, 34, 1, 36.5, 25.25, 1, 45.5, 14.75, 1, -5.25, 9.25, 1, -5.25, 9, 1, -9.25, 0.25, 1, -9.25, 53.25, 1, 40.25, 52.75, 1, 40.75, 54, 1, 41.5, 14.75, 1, 19.75, 15, 1, 20.5, 4.25, 1, 15.25, 15.25, 1, 24.5, 24, 1, 24.5, 15.25, 1, 19.25, 15.25, 1, 5.75, 28.75, 1, 26.75, 25.25, 1, 26.75, 29.25, 1, 26.25, 30, 1, 26.5, 34, 1, 26.75, 10, 6.5, -3.5, 10, 6.5, -0.5, 14.25, 6.5, -0.5, 14.25, 6.5, -3.5, 0, 6.5, 0.5, 0, 6.5, 14.75, 3.25, 6.5, 14.75, 3.25, 6.5, 0.5, 6, 6.5, 0.5, 6, 6.5, 14.75, 9, 6.5, 14.75, 9, 6.5, 0.5, 15, 6.5, 0.5, 15, 6.5, 4.75, 18.25, 6.5, 4.75, 18.25, 6.5, 0.5, 21, 6.5, 0.5, 21, 6.5, 4.75, 24, 6.5, 4.75, 24, 6.5, 0.5, 35, 6.5, 5, 35, 6.5, 8.75, 39.25, 6.5, 8.75, 39.25, 6.5, 5, 35, 6.5, 11.5, 35, 6.5, 14.5, 39.25, 6.5, 14.5, 39.25, 6.5, 11.5, 10, 6.5, 15.5, 10, 6.5, 18.75, 14.25, 6.5, 18.75, 14.25, 6.5, 15.5, 25, 6.5, 15.5, 25, 6.5, 25.75, 28.25, 6.5, 25.75, 28.25, 6.5, 15.5, 31, 6.5, 15.5, 31, 6.5, 25.75, 34, 6.5, 25.75, 34, 6.5, 15.5, 40, 6.5, 15.5, 40, 6.5, 28, 43.25, 6.5, 28, 43.25, 6.5, 15.5, 46, 6.5, 26.25, 48.25, 6.5, 26.25, 48, 6.5, 15.5, 46, 6.5, 15.5, 10, 6.5, 21.5, 10, 6.5, 25, 14.25, 6.5, 25, 14.25, 6.5, 21.5, 44, 6.5, 29, 44, 6.5, 32, 48.25, 6.5, 32, 48.25, 6.5, 29, 55, 6.5, 33, 55, 6.5, 41.5, 58, 6.5, 41.5, 58, 6.5, 33, 45, 6.5, 42.5, 45, 6.5, 45.5, 54, 6.5, 45.5, 54, 6.5, 42.5)
@@ -213,7 +215,9 @@ points = PackedVector3Array(49.5, 6, 15.5, 49.5, 0, 15.5, 48.5, 6, 15.5, 48.5, 0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qx6e3"]
 points = PackedVector3Array(50, 6, 15, 50, 0, 15, 49.5, 6, 15, 49.5, 0, 15, 50, 6, 5, 50, 0, 5, 49.5, 6, 5, 49.5, 0, 5)
 
-[node name="LevelOne" type="Node3D" unique_id=23460073]
+[node name="LevelOne" type="Node3D" unique_id=23460073 node_paths=PackedStringArray("LEVEL_TRANSITION")]
+script = ExtResource("1_jj3p3")
+LEVEL_TRANSITION = NodePath("LevelTransition")
 
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("1_tfbuk")]
 
@@ -408,3 +412,7 @@ shape = SubResource("ConvexPolygonShape3D_5e001")
 
 [node name="entity_0_brush_57_collision_shape" type="CollisionShape3D" parent="NavigationRegion3D/FuncGodotMap/entity_0_worldspawn" unique_id=124931913]
 shape = SubResource("ConvexPolygonShape3D_qx6e3")
+
+[node name="LevelTransition" parent="." unique_id=1570864238 instance=ExtResource("7_hu4x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3934255, 0.515368, 0)
+DESTINATION_LEVEL = "uid://urfuelmsqpwo"

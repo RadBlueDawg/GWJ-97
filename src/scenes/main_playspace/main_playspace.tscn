@@ -42,4 +42,5 @@ SEGMENTS = 2
 
 [node name="LevelSwitcher" parent="UserInterface" unique_id=1210723540 instance=ExtResource("4_pyy7h")]
 
-[connection signal="switch_level" from="UserInterface/LevelSwitcher" to="Managers/GameManager" method="_on_level_switcher_switch_level"]
+[connection signal="change_level" from="CurrentLevel/LevelOne" to="Managers/GameManager" method="_on_change_level"]
+[connection signal="switch_level" from="UserInterface/LevelSwitcher" to="Managers/GameManager" method="_on_change_level"]

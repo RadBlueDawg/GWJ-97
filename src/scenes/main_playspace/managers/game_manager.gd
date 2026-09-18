@@ -17,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("dev_switch"):
 		LEVEL_SWITCHER.toggle_open()
 
-func _on_level_switcher_switch_level(levelUID: String) -> void:
+func _on_change_level(sceneUID:String) -> void:
 	if not CURRENT_LEVEL_HOLDER:
 		return
 		
@@ -25,11 +25,19 @@ func _on_level_switcher_switch_level(levelUID: String) -> void:
 	add_child(newLoadingScreen)
 	await newLoadingScreen.loading_screen_ready
 	
-	var newLevel:PackedScene = load(levelUID)
+	var newScene:PackedScene = load(sceneUID)
 	
 	for child in CURRENT_LEVEL_HOLDER.get_children():
-		child.queue_free()
-		CURRENT_LEVEL_HOLDER.remove_child(child)
+			if child is Level:
+				child.change_level.disconnect(_on_change_level)
+			
+			child.queue_free()
+			CURRENT_LEVEL_HOLDER.remove_child(child)
 	
-	CURRENT_LEVEL_HOLDER.add_child(newLevel.instantiate())
+	var newLevel = newScene.instantiate()
+	if newLevel is Level:
+		newLevel.change_level.connect(_on_change_level)
+		
+	CURRENT_LEVEL_HOLDER.add_child(newLevel)
+	
 	newLoadingScreen._on_load_finished()
