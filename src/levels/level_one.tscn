@@ -222,9 +222,10 @@ LEVEL_TRANSITION = NodePath("LevelTransition")
 [node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("1_tfbuk")]
 
 [node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("2_4wl7b")]
-transform = Transform3D(-0.038336106, 0, -0.9992648, 0, 1, 0, 0.9992648, 0, -0.038336106, 2.418299, 1, -3.891283)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -8.339872, 1, 1.1512194)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=66403054]
+transform = Transform3D(-0.34202012, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, -0.34202012, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_c1sjb")
 
 [node name="FuncGodotMap" type="Node3D" parent="NavigationRegion3D" unique_id=849773796]
@@ -414,5 +415,5 @@ shape = SubResource("ConvexPolygonShape3D_5e001")
 shape = SubResource("ConvexPolygonShape3D_qx6e3")
 
 [node name="LevelTransition" parent="." unique_id=1570864238 instance=ExtResource("7_hu4x8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3934255, 0.515368, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.320726, 0.43715525, -3.1237297)
 DESTINATION_LEVEL = "uid://urfuelmsqpwo"
