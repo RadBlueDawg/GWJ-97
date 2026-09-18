@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://crv06s84svgpu"]
+
+[ext_resource type="Script" uid="uid://dhnlkpuqoam0t" path="res://scenes/ui/level_switcher.gd" id="1_4e7rq"]
+
+[node name="LevelSwitcher" type="Control" unique_id=1210723540]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4e7rq")
+
+[node name="Panel" type="Panel" parent="." unique_id=777559229]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_bottom = 79.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=292870168]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSelectOptions" type="OptionButton" parent="Panel/VBoxContainer" unique_id=989390662]
+layout_mode = 2
+size_flags_vertical = 0
+item_count = 3
+popup/item_0/text = "Test Level"
+popup/item_0/id = 0
+popup/item_1/text = "Trenchbroom"
+popup/item_1/id = 1
+popup/item_2/text = "Level 1"
+popup/item_2/id = 2
+
+[node name="SwitchButton" type="Button" parent="Panel/VBoxContainer" unique_id=2038253987]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Switch Level"
+
+[connection signal="pressed" from="Panel/VBoxContainer/SwitchButton" to="." method="_on_switch_button_pressed"]

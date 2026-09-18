@@ -2,21 +2,24 @@
 
 [ext_resource type="Script" uid="uid://c4x4dndfhp68h" path="res://scenes/ui/reticle_draw.gd" id="1_lehbl"]
 [ext_resource type="Script" uid="uid://dxo7oct3qnltt" path="res://scenes/main_playspace/managers/game_manager.gd" id="1_pd38t"]
-[ext_resource type="PackedScene" uid="uid://b6a11iihi378e" path="res://levels/trenchbroom_prototype.tscn" id="2_e8ton"]
+[ext_resource type="PackedScene" uid="uid://bhl1d87hwrwc2" path="res://levels/level_one.tscn" id="2_e8ton"]
 [ext_resource type="PackedScene" uid="uid://byg0eayikeksf" path="res://scenes/ui/pause_menu.tscn" id="3_e8ton"]
+[ext_resource type="PackedScene" uid="uid://crv06s84svgpu" path="res://scenes/ui/level_switcher.tscn" id="4_pyy7h"]
 
 [node name="MainPlayspace" type="Node" unique_id=313673683]
 
 [node name="Managers" type="Node" parent="." unique_id=1084013818]
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=2006030845 node_paths=PackedStringArray("PAUSE_MENU")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=2006030845 node_paths=PackedStringArray("PAUSE_MENU", "LEVEL_SWITCHER", "CURRENT_LEVEL_HOLDER")]
 process_mode = 3
 script = ExtResource("1_pd38t")
 PAUSE_MENU = NodePath("../../UserInterface/PauseMenu")
+LEVEL_SWITCHER = NodePath("../../UserInterface/LevelSwitcher")
+CURRENT_LEVEL_HOLDER = NodePath("../../CurrentLevel")
 
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=159482136]
 
-[node name="TrenchbroomPrototype" parent="CurrentLevel" unique_id=1721609114 instance=ExtResource("2_e8ton")]
+[node name="LevelOne" parent="CurrentLevel" unique_id=23460073 instance=ExtResource("2_e8ton")]
 
 [node name="UserInterface" type="CanvasLayer" parent="." unique_id=1623847157]
 
@@ -36,9 +39,7 @@ GAP_ANGLE = 32.575
 SEGMENTS = 2
 
 [node name="PauseMenu" parent="UserInterface" unique_id=1355520267 instance=ExtResource("3_e8ton")]
-offset_left = 320.0
-offset_top = 180.0
-offset_right = 320.0
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="LevelSwitcher" parent="UserInterface" unique_id=1210723540 instance=ExtResource("4_pyy7h")]
+
+[connection signal="switch_level" from="UserInterface/LevelSwitcher" to="Managers/GameManager" method="_on_level_switcher_switch_level"]
