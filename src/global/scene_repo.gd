@@ -9,5 +9,7 @@ const FRAMEWORK: Dictionary = {
 const LEVELS: Dictionary = {
 	"test": "uid://urfuelmsqpwo",
 	"trenchbroom_prototype": "uid://b6a11iihi378e",
-	"level_one": "uid://bhl1d87hwrwc2"
+	"level_zero": "uid://ckrn60wll7jhk",
+	"level_one": "uid://bhl1d87hwrwc2",
+	"victory_room": "uid://cld38trh8c31b"
 }

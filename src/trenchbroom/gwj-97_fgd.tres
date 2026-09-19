@@ -5,10 +5,12 @@
 [ext_resource type="Resource" uid="uid://3silfqeujb6e" path="res://trenchbroom/fgd/solid/func_moving_platform.tres" id="2_rnn5r"]
 [ext_resource type="Resource" uid="uid://dlx7x4rbhupfu" path="res://trenchbroom/fgd/point/func_light.tres" id="3_xila4"]
 [ext_resource type="Resource" uid="uid://dbtqjxnutxajg" path="res://trenchbroom/fgd/model_point/light_lamppost.tres" id="4_3owdo"]
+[ext_resource type="Resource" uid="uid://bg67qf6vteq8s" path="res://trenchbroom/fgd/point/enemy_skelly.tres" id="5_b0uaw"]
+[ext_resource type="Resource" uid="uid://db066su4wwe8v" path="res://trenchbroom/fgd/solid/func_enemy_trigger.tres" id="6_3f3pl"]
 
 [resource]
 script = ExtResource("1_m5a2q")
 fgd_name = "GWJ-97"
 base_fgd_files = Array[Resource]([ExtResource("1_d1fvi")])
-entity_definitions = Array[Resource]([ExtResource("2_rnn5r"), ExtResource("3_xila4"), ExtResource("4_3owdo")])
+entity_definitions = Array[Resource]([ExtResource("2_rnn5r"), ExtResource("3_xila4"), ExtResource("4_3owdo"), ExtResource("5_b0uaw"), ExtResource("6_3f3pl")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"

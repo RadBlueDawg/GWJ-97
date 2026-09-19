@@ -5,7 +5,6 @@ class_name SimpleEnemy extends Enemy
 @export var STATE_CHART:StateChart
 @export var HEALTH_COMPONENT:HealthComponent
 @export var ANIMATED_SPRITE:AnimatedSprite3D
-@export var TRIGGERABLE_COMPONENT:TriggerableComponent
 @export_category("Settings")
 @export var FOLLOW_SPEED:float = 3.0
 @export var MELEE_RANGE:float = 1.6
@@ -31,9 +30,9 @@ func on_triggered() -> void:
 	STATE_CHART.send_event("onFollow")
 	
 func get_targetname() -> String:
-	return TRIGGERABLE_COMPONENT.TARGET_NAME if TRIGGERABLE_COMPONENT else ""
+	return ""
 	
-func on_trigger(player) -> void:
+func on_trigger(_player) -> void:
 	STATE_CHART.send_event("onFollow")
 
 func _on_follow_state_physics_processing(delta: float) -> void:
@@ -101,7 +100,6 @@ func _on_follow_state_entered() -> void:
 	if ANIMATED_SPRITE:
 		ANIMATED_SPRITE.play("move")
 
-
 func _on_death_state_entered() -> void:
 	velocity = Vector3.ZERO
 	NAV_AGENT.velocity = Vector3.ZERO
@@ -119,3 +117,6 @@ func _apply_damage_to_target() -> void:
 	var healthComponent = targetComponents.get_node_or_null("HealthComponent")
 	if healthComponent and healthComponent.has_method("take_damage"):
 		healthComponent.take_damage(MELEE_DAMAGE, self)
+
+func _on_health_component_damage_taken(_amount: float, _source: Node3D) -> void:
+	on_triggered()

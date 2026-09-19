@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dv2c4lhimgjno"]
+
+[ext_resource type="Texture2D" uid="uid://cdu4ixsq5t0n5" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/tomb_2_new.png" id="1_hujfd"]
+
+[resource]
+albedo_texture = ExtResource("1_hujfd")
+metallic_specular = 0.0
+texture_filter = 2

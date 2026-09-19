@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cld38trh8c31b"]
+
+[ext_resource type="Script" uid="uid://rq5mxh7q7tbs" path="res://utilities/level.gd" id="1_qrgnn"]
+[ext_resource type="PackedScene" uid="uid://b1nebrc3734p0" path="res://utilities/world_environment.tscn" id="2_0fjya"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxyin"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c1sjb"]
+material = SubResource("StandardMaterial3D_uxyin")
+size = Vector3(2, 2, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0fjya"]
+data = PackedVector3Array(-1, 1, 0.5, 1, 1, 0.5, -1, -1, 0.5, 1, 1, 0.5, 1, -1, 0.5, -1, -1, 0.5, 1, 1, -0.5, -1, 1, -0.5, 1, -1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, -1, -0.5, 1, 1, 0.5, 1, 1, -0.5, 1, -1, 0.5, 1, 1, -0.5, 1, -1, -0.5, 1, -1, 0.5, -1, 1, -0.5, -1, 1, 0.5, -1, -1, -0.5, -1, 1, 0.5, -1, -1, 0.5, -1, -1, -0.5, 1, 1, 0.5, -1, 1, 0.5, 1, 1, -0.5, -1, 1, 0.5, -1, 1, -0.5, 1, 1, -0.5, -1, -1, 0.5, 1, -1, 0.5, -1, -1, -0.5, 1, -1, 0.5, 1, -1, -0.5, -1, -1, -0.5)
+
+[node name="VictoryRoom" type="Node3D" unique_id=404250865]
+script = ExtResource("1_qrgnn")
+
+[node name="WorldEnvironment" parent="." unique_id=1320877776 instance=ExtResource("2_0fjya")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2138893753]
+transform = Transform3D(0.0009296694, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, 0.0009296694, -1.6659257, 0.7093811, 0)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=58779645]
+transform = Transform3D(-0.06836882, -0.001265179, -0.99765944, -0.018502038, 0.99982893, 0, 0.99748856, 0.01845873, -0.06838052, 1.4339486, 0.7093811, 0)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=725369724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058681726, 0.7093811, 1.2427312)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=390139053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058681726, 0.7093811, -1.2954174)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1096540723]
+transform = Transform3D(1, 0, 0, 0, 0.048072238, -0.99884385, 0, 0.99884385, 0.048072238, -0.058681726, 1.701866, -0.0022553205)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=800516430]
+collision_mask = 3
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="StaticBody3D" unique_id=1326932326]
+transform = Transform3D(1, 0, 0, 0, -0.0055146376, 0.9999848, 0, -0.9999848, -0.0055146376, -0.058681726, -1.4875839, -0.0022553205)
+mesh = SubResource("BoxMesh_c1sjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1644208826]
+transform = Transform3D(1, 0, 0, 0, -0.0055146376, 0.9999848, 0, -0.9999848, -0.0055146376, -0.058681726, -1.4875839, -0.0022553205)
+shape = SubResource("ConcavePolygonShape3D_0fjya")

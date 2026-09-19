@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_hm0mn"]
 [ext_resource type="Texture2D" uid="uid://bl48ga8hf6km6" path="res://assets/sprites/Skelly.png" id="2_ho7jy"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_2kgy0"]
-[ext_resource type="Script" uid="uid://426jcm1vytug" path="res://utilities/components/triggerable_component.gd" id="4_fgow6"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_ho7jy"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_fgow6"]
 
@@ -107,13 +106,12 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_c1sjb"]
 radius = 5.0
 
-[node name="SimpleEnemy" type="CharacterBody3D" unique_id=647585826 node_paths=PackedStringArray("NAV_AGENT", "STATE_CHART", "HEALTH_COMPONENT", "ANIMATED_SPRITE", "TRIGGERABLE_COMPONENT")]
+[node name="SimpleEnemy" type="CharacterBody3D" unique_id=647585826 node_paths=PackedStringArray("NAV_AGENT", "STATE_CHART", "HEALTH_COMPONENT", "ANIMATED_SPRITE")]
 script = ExtResource("1_2kgy0")
 NAV_AGENT = NodePath("NavigationAgent3D")
 STATE_CHART = NodePath("StateChart")
 HEALTH_COMPONENT = NodePath("Components/HealthComponent")
 ANIMATED_SPRITE = NodePath("AnimatedSprite3D")
-TRIGGERABLE_COMPONENT = NodePath("Components/TriggerableComponent")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=116037676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11565304, 1.0269485, 0)
@@ -136,10 +134,6 @@ debug_enabled = true
 script = ExtResource("1_gsiem")
 MAX_HEALTH = 50.0
 metadata/_custom_type_script = "uid://cnxm14583xc8h"
-
-[node name="TriggerableComponent" type="Node" parent="Components" unique_id=1657165233]
-script = ExtResource("4_fgow6")
-TARGET_NAME = "enemy1"
 
 [node name="StateChart" type="Node" parent="." unique_id=1914806792]
 script = ExtResource("2_hm0mn")
@@ -194,6 +188,7 @@ shape = SubResource("SphereShape3D_c1sjb")
 debug_color = Color(0.8737592, 0.29658908, 0.47077638, 0.41960785)
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="damage_taken" from="Components/HealthComponent" to="." method="_on_health_component_damage_taken"]
 [connection signal="died" from="Components/HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="state_entered" from="StateChart/Root/Follow" to="." method="_on_follow_state_entered"]
 [connection signal="state_physics_processing" from="StateChart/Root/Follow" to="." method="_on_follow_state_physics_processing"]

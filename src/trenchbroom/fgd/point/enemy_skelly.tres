@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://bg67qf6vteq8s"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_mtblk"]
+[ext_resource type="PackedScene" uid="uid://be3kvqwbq6bbh" path="res://scenes/enemies/simple_enemy.tscn" id="2_5fed8"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="3_wvq0o"]
+
+[resource]
+script = ExtResource("3_wvq0o")
+scene_file = ExtResource("2_5fed8")
+classname = "enemy_skelly"
+class_properties = Dictionary[String, Variant]({
+"targetname": ""
+})
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

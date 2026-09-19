@@ -23,6 +23,8 @@ func _func_godot_apply_properties(entityProperties:Dictionary) -> void:
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(2, true)
 
 func _on_body_entered(body:Node3D) -> void:
 	if TRIGGER_ONCE and hasTriggered:

@@ -32,13 +32,17 @@ grow_vertical = 2
 [node name="LevelSelectOptions" type="OptionButton" parent="Panel/VBoxContainer" unique_id=989390662]
 layout_mode = 2
 size_flags_vertical = 0
-item_count = 3
+item_count = 5
 popup/item_0/text = "Test Level"
 popup/item_0/id = 0
 popup/item_1/text = "Trenchbroom"
 popup/item_1/id = 1
-popup/item_2/text = "Level 1"
+popup/item_2/text = "Level 0"
 popup/item_2/id = 2
+popup/item_3/text = "Level 1"
+popup/item_3/id = 3
+popup/item_4/text = "Victory Room"
+popup/item_4/id = 4
 
 [node name="SwitchButton" type="Button" parent="Panel/VBoxContainer" unique_id=2038253987]
 layout_mode = 2

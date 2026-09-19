@@ -56,6 +56,10 @@ func _on_change_level(sceneUID:String) -> void:
 	PLAYER_CONTROLLER.global_position = newLevel.PLAYER_START_POSITION
 	
 	newLoadingScreen._on_load_finished()
+	
+	if sceneUID == SceneRepo.LEVELS.victory_room:
+		gameOver = true
+		ENDGAME_SCREEN.end_game(true)
 
 func _on_player_damage_taken(_amount:float, _source:Node3D) -> void:
 	PLAYER_HUD.set_current_health(PLAYER_CONTROLLER.HEALTH_COMPONENT.currentHealth)

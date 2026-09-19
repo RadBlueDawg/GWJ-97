@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bxrnii4dyqoaf" path="res://utilities/components/weapon_controller.gd" id="6_0l0yx"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="6_ers80"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_nwn0c"]
-[ext_resource type="Resource" uid="uid://cju0i8qhexa6t" path="res://assets/resources/weapons/acid_splash.tres" id="7_rue81"]
+[ext_resource type="Resource" uid="uid://c2acdbipe82vc" path="res://assets/resources/weapons/fire_bolt.tres" id="7_rue81"]
 [ext_resource type="Script" uid="uid://cnxm14583xc8h" path="res://utilities/components/health_component.gd" id="8_ii78e"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_y4pjd"]
 [ext_resource type="Script" uid="uid://yujlprm82rvy" path="res://utilities/components/player_state_machine.gd" id="9_rkuj1"]
