@@ -33,6 +33,7 @@ func fire_weapon() -> void:
 		if currentWeaponModel is WeaponModel:
 			currentWeaponModel.fire()
 		
+		await get_tree().create_timer(CURRENT_WEAPON.FIRE_WINDUP).timeout
 		currentAmmo -= 1
 		print("Fired! Ammo: ", currentAmmo)
 		ammo_changed.emit(currentAmmo, CURRENT_WEAPON.MAX_AMMO)
