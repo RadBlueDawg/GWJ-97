@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c63iki22373ck"]
+
+[ext_resource type="Script" uid="uid://dorhyruvc7hi0" path="res://scenes/weapons/projectiles/projectile.gd" id="1_csfjf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxyin"]
+albedo_color = Color(0.3192508, 0.8241986, 0, 1)
+emission_enabled = true
+emission = Color(0.31764707, 0.8235294, 0, 1)
+emission_energy_multiplier = 3.87
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rxqpc"]
+material = SubResource("StandardMaterial3D_uxyin")
+radius = 0.1
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6hglc"]
+radius = 0.1
+height = 1.0
+
+[node name="AcidProjectile" type="Area3D" unique_id=1233327274]
+script = ExtResource("1_csfjf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=250693268]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_rxqpc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1534868213]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_6hglc")

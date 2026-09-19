@@ -2,18 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://obtfu1f58yrr" path="res://scenes/weapons/acid_splash.tscn" id="1_l5jaf"]
 [ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_qovst"]
-[ext_resource type="PackedScene" uid="uid://ciyg4seppdkjh" path="res://scenes/weapons/projectiles/projectile.tscn" id="2_xa5ac"]
+[ext_resource type="PackedScene" uid="uid://c63iki22373ck" path="res://scenes/weapons/projectiles/acid_projectile.tscn" id="2_l5jaf"]
 
 [resource]
 script = ExtResource("1_qovst")
 NAME = "Acid Splash"
 DAMAGE = 15.0
 FIRE_WINDUP = 0.5
-FIRE_DELAY = 1.0
+FIRE_RATE = 1.0
 RELOAD_DELAY = 3.8
-RANGE = 5.0
+RANGE = 15.0
+ACCURACY = 75
 IS_HITSCAN = false
 MODEL = ExtResource("1_l5jaf")
-PROJECTILE = ExtResource("2_xa5ac")
+PROJECTILE = ExtResource("2_l5jaf")
+PELLET_COUNT = 8
+SPREAD_ANGLE = 0.1
 POSITION = Vector3(0.615, -0.76, -1.385)
 metadata/_custom_type_script = "uid://xgdudhfp15k"

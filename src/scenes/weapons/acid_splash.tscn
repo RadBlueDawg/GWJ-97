@@ -939,6 +939,7 @@ animations = [{
 }]
 
 [node name="AcidSplash" type="AnimatedSprite3D" unique_id=575145908]
+no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_mw3r2")
 animation = &"reload"
 autoplay = "idle"

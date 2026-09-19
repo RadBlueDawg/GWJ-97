@@ -10,6 +10,7 @@ signal ammo_changed(current:int, max:int)
 
 var currentWeaponModel:Node3D
 var currentAmmo:int
+var isFiring:bool
 
 func _ready() -> void:
 	if CURRENT_WEAPON:
@@ -26,10 +27,11 @@ func spawn_weapon_model() -> void:
 		currentWeaponModel.position = CURRENT_WEAPON.POSITION
 
 func can_fire() -> bool:
-	return currentAmmo > 0
+	return currentAmmo > 0 and not isFiring
 
 func fire_weapon() -> void:
 	if can_fire():
+		isFiring = true
 		if currentWeaponModel is WeaponModel:
 			currentWeaponModel.fire()
 		
@@ -42,6 +44,8 @@ func fire_weapon() -> void:
 			_perform_hitscan()
 		else:
 			_spawn_projectile()
+		
+		isFiring = false
 		
 func reload_weapon() -> void:
 	if currentWeaponModel is WeaponModel:
@@ -59,16 +63,18 @@ func _perform_hitscan() -> void:
 	
 	var spaceState:PhysicsDirectSpaceState3D = CAMERA.get_world_3d().direct_space_state
 	var from:Vector3 = CAMERA.global_position
-	var forward:Vector3 = -CAMERA.global_transform.basis.z
-	var to:Vector3 = from + forward * CURRENT_WEAPON.RANGE
 	
-	var query = PhysicsRayQueryParameters3D.create(from, to)
-	var result:Dictionary = spaceState.intersect_ray(query)
+	for i in CURRENT_WEAPON.PELLET_COUNT:
+		var direction = _apply_accuracy_to_direction()	
+		var to:Vector3 = from + direction * CURRENT_WEAPON.RANGE
 	
-	if result:
-		print("Hit: ", result.collider.name, " at ", result.position)
-		_spawn_impact_marker(result.position)
-		_apply_damage_to_target(result.collider)
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		var result:Dictionary = spaceState.intersect_ray(query)
+	
+		if result:
+			print("Hit: ", result.collider.name, " at ", result.position)
+			_spawn_impact_marker(result.position)
+			_apply_damage_to_target(result.collider)
 		
 func _spawn_impact_marker(position:Vector3) -> void:
 	var marker = MeshInstance3D.new()
@@ -94,15 +100,32 @@ func _spawn_projectile() -> void:
 		print("No camera assigned!")
 		return
 		
-	var projectile = CURRENT_WEAPON.PROJECTILE.instantiate() as Projectile
-	get_tree().current_scene.add_child(projectile)
+	for i in CURRENT_WEAPON.PELLET_COUNT:
+		var projectile = CURRENT_WEAPON.PROJECTILE.instantiate() as Projectile
+		get_tree().current_scene.add_child(projectile)
 	
-	projectile.global_position = CAMERA.global_position
+		projectile.global_position = CAMERA.global_position
 	
+		var direction = _apply_accuracy_to_direction()
+	
+		var velocity = direction * CURRENT_WEAPON.PROJECTILE_SPEED
+		projectile.look_at(projectile.global_position + direction, Vector3.UP)
+		projectile.setup(velocity, CURRENT_WEAPON.DAMAGE, CURRENT_WEAPON.RANGE)
+
+func _apply_accuracy_to_direction() -> Vector3:
+	var accuracySpread:float = (100 - CURRENT_WEAPON.ACCURACY) / 1000.0
 	var forward = -CAMERA.global_transform.basis.z
-	var velocity = forward * CURRENT_WEAPON.PROJECTILE_SPEED
-	projectile.look_at(projectile.global_position + forward, Vector3.UP)
-	projectile.setup(velocity, CURRENT_WEAPON.DAMAGE)
+	
+	var accuracy_X = randf_range(-accuracySpread, accuracySpread)
+	var accuracy_Y = randf_range(-accuracySpread, accuracySpread)
+	var direction = forward + Vector3(accuracy_X, accuracy_Y, 0) * CAMERA.global_transform.basis
+	
+	if CURRENT_WEAPON.PELLET_COUNT > 1:
+		var spread_X = randf_range(-CURRENT_WEAPON.SPREAD_ANGLE, CURRENT_WEAPON.SPREAD_ANGLE)
+		var spread_Y = randf_range(-CURRENT_WEAPON.SPREAD_ANGLE, CURRENT_WEAPON.SPREAD_ANGLE)
+		direction += Vector3(spread_X, spread_Y, 0)
+	
+	return direction
 
 func _apply_damage_to_target(target:Node3D) -> void:
 	var targetComponents = target.get_node_or_null("Components")

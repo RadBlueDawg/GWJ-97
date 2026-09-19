@@ -645,6 +645,7 @@ animations = [{
 }]
 
 [node name="LightningBolt" type="AnimatedSprite3D" unique_id=325075909]
+no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_qqyur")
 animation = &"reload"
 autoplay = "idle"

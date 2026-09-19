@@ -2,12 +2,12 @@ class_name Projectile extends Area3D
 
 var velocity:Vector3
 var damage:float
+var maxRange:float
+var totalDistanceTravelled:float
 var hit:bool
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
-	
-	get_tree().create_timer(3.0).timeout.connect(queue_free)
 	
 func _physics_process(delta: float) -> void:
 	var spaceState:PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
@@ -25,9 +25,15 @@ func _physics_process(delta: float) -> void:
 	
 	global_position = end
 	
-func setup(vel:Vector3, dmg:float) -> void:
+	totalDistanceTravelled += start.distance_to(end)
+	if totalDistanceTravelled >= maxRange:
+		queue_free()
+	
+func setup(vel:Vector3, dmg:float, rng:float) -> void:
 	velocity = vel
 	damage = dmg
+	maxRange = rng
+	totalDistanceTravelled = 0
 
 func _on_body_entered(body:Node3D) -> void:
 	if not hit:

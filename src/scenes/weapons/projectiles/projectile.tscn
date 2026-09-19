@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dorhyruvc7hi0" path="res://scenes/weapons/projectiles/projectile.gd" id="1_1wat7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxyin"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wat7"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 12.87
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c1sjb"]
-material = SubResource("StandardMaterial3D_uxyin")
+material = SubResource("StandardMaterial3D_1wat7")
 radius = 0.1
 height = 1.0
 
