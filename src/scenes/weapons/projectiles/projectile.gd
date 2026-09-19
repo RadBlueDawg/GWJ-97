@@ -2,6 +2,7 @@ class_name Projectile extends Area3D
 
 var velocity:Vector3
 var damage:float
+var hit:bool
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -29,10 +30,12 @@ func setup(vel:Vector3, dmg:float) -> void:
 	damage = dmg
 
 func _on_body_entered(body:Node3D) -> void:
-	print("Projectile hit: ", body.name, " at ", global_position)
-	_spawn_impact_marker(global_position)
-	_apply_damage_to_target(body)
-	queue_free()
+	if not hit:
+		hit = true
+		print("Projectile hit: ", body.name, " at ", global_position)
+		_spawn_impact_marker(global_position)
+		_apply_damage_to_target(body)
+		queue_free()
 
 func _spawn_impact_marker(position:Vector3) -> void:
 	var marker = MeshInstance3D.new()

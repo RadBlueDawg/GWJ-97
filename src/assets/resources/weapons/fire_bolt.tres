@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b667l5q2n47vc" path="res://scenes/weapons/fire_bolt.tscn" id="1_otpk7"]
 [ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_vo67l"]
-[ext_resource type="PackedScene" uid="uid://ciyg4seppdkjh" path="res://scenes/weapons/projectiles/projectile.tscn" id="2_4gms1"]
+[ext_resource type="PackedScene" uid="uid://biohl7tl2wy3k" path="res://scenes/weapons/projectiles/fire_projectile.tscn" id="2_4gms1"]
 
 [resource]
 script = ExtResource("1_vo67l")
