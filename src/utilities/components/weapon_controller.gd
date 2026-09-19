@@ -6,6 +6,8 @@ class_name WeaponController extends Node
 @export var WEAPON_MODEL_PARENT:Node3D
 @export var WEAPON_STATE_CHART:StateChart
 
+signal ammo_changed(current:int, max:int)
+
 var currentWeaponModel:Node3D
 var currentAmmo:int
 
@@ -30,6 +32,7 @@ func fire_weapon() -> void:
 	if can_fire():
 		currentAmmo -= 1
 		print("Fired! Ammo: ", currentAmmo)
+		ammo_changed.emit(currentAmmo, CURRENT_WEAPON.MAX_AMMO)
 		
 		if CURRENT_WEAPON.IS_HITSCAN:
 			_perform_hitscan()

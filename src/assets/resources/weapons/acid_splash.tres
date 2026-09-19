@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://cju0i8qhexa6t"]
+
+[ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_qovst"]
+
+[resource]
+script = ExtResource("1_qovst")
+NAME = "Acid Splash"
+DAMAGE = 15.0
+RANGE = 5.0
+IS_HITSCAN = false
+metadata/_custom_type_script = "uid://xgdudhfp15k"

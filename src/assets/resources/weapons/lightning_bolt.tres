@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://eit036wah1"]
+
+[ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_2cviv"]
+
+[resource]
+script = ExtResource("1_2cviv")
+NAME = "Lightning Bolt"
+DAMAGE = 20.0
+MAX_AMMO = 5
+RANGE = 50.0
+metadata/_custom_type_script = "uid://xgdudhfp15k"

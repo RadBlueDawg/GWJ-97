@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c2acdbipe82vc"]
+
+[ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_vo67l"]
+
+[resource]
+script = ExtResource("1_vo67l")
+NAME = "Fire Bolt"
+DAMAGE = 10.0
+MAX_AMMO = 10
+RANGE = 20.0
+IS_HITSCAN = false
+metadata/_custom_type_script = "uid://xgdudhfp15k"

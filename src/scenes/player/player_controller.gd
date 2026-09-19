@@ -9,6 +9,7 @@ class_name PlayerController extends CharacterBody3D
 @export var CROUCH_CHECK:ShapeCast3D
 @export var INTERACTION_RAYCAST:RayCast3D
 @export var HEALTH_COMPONENT:HealthComponent
+@export var WEAPON_CONTROLLER:WeaponController
 @export_category("Movement Settings")
 @export_group("Easing")
 @export var ACCELERATION:float = 0.2

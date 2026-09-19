@@ -17,6 +17,7 @@ func _ready() -> void:
 	PLAYER_CONTROLLER.global_position = currentLevel.PLAYER_START_POSITION
 	PLAYER_CONTROLLER.HEALTH_COMPONENT.damage_taken.connect(_on_player_damage_taken)
 	PLAYER_CONTROLLER.HEALTH_COMPONENT.died.connect(_on_player_died)
+	PLAYER_CONTROLLER.WEAPON_CONTROLLER.ammo_changed.connect(_on_player_ammo_changed)
 	PLAYER_HUD.set_starting_health(PLAYER_CONTROLLER.HEALTH_COMPONENT.MAX_HEALTH)
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -62,3 +63,6 @@ func _on_player_damage_taken(_amount:float, _source:Node3D) -> void:
 func _on_player_died() -> void:
 	gameOver = true
 	ENDGAME_SCREEN.end_game(false)
+	
+func _on_player_ammo_changed(currentAmmo:int, maxAmmo:int) -> void:
+	pass
