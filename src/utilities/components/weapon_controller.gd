@@ -30,6 +30,9 @@ func can_fire() -> bool:
 
 func fire_weapon() -> void:
 	if can_fire():
+		if currentWeaponModel is WeaponModel:
+			currentWeaponModel.fire()
+		
 		currentAmmo -= 1
 		print("Fired! Ammo: ", currentAmmo)
 		ammo_changed.emit(currentAmmo, CURRENT_WEAPON.MAX_AMMO)
@@ -39,6 +42,15 @@ func fire_weapon() -> void:
 		else:
 			_spawn_projectile()
 		
+func reload_weapon() -> void:
+	if currentWeaponModel is WeaponModel:
+		currentWeaponModel.reload()
+	
+	await get_tree().create_timer(CURRENT_WEAPON.RELOAD_DELAY).timeout
+	currentAmmo = CURRENT_WEAPON.MAX_AMMO
+	print("Reloaded! Ammo: ", currentAmmo)
+	ammo_changed.emit(currentAmmo, CURRENT_WEAPON.MAX_AMMO)
+
 func _perform_hitscan() -> void:
 	if not CAMERA:
 		print("No camera assigned!")

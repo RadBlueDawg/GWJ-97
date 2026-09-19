@@ -6,3 +6,6 @@ func set_starting_health(maxHealth:float) -> void:
 
 func set_current_health(currentHealth:float) -> void:
 	$HealthBar.value = currentHealth
+
+func set_ammo_count(currentAmmo:int, maxAmmo:int) -> void:
+	$AmmoLabel.text = str(currentAmmo) + " / " + str(maxAmmo)

@@ -65,4 +65,4 @@ func _on_player_died() -> void:
 	ENDGAME_SCREEN.end_game(false)
 	
 func _on_player_ammo_changed(currentAmmo:int, maxAmmo:int) -> void:
-	pass
+	PLAYER_HUD.set_ammo_count(currentAmmo, maxAmmo)

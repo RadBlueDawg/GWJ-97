@@ -1,12 +1,18 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://c2acdbipe82vc"]
 
+[ext_resource type="PackedScene" uid="uid://b667l5q2n47vc" path="res://scenes/weapons/fire_bolt.tscn" id="1_otpk7"]
 [ext_resource type="Script" uid="uid://xgdudhfp15k" path="res://utilities/weapon.gd" id="1_vo67l"]
+[ext_resource type="PackedScene" uid="uid://ciyg4seppdkjh" path="res://scenes/weapons/projectiles/projectile.tscn" id="2_4gms1"]
 
 [resource]
 script = ExtResource("1_vo67l")
 NAME = "Fire Bolt"
 DAMAGE = 10.0
 MAX_AMMO = 10
+RELOAD_DELAY = 1.0
 RANGE = 20.0
 IS_HITSCAN = false
+MODEL = ExtResource("1_otpk7")
+PROJECTILE = ExtResource("2_4gms1")
+POSITION = Vector3(1.04, -0.495, -1.486)
 metadata/_custom_type_script = "uid://xgdudhfp15k"

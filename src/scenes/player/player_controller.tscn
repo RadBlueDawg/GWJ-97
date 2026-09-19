@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://c1vp0ojjvaby1" path="res://addons/godot_state_charts/parallel_state.gd" id="5_rkuj1"]
 [ext_resource type="Script" uid="uid://bxrnii4dyqoaf" path="res://utilities/components/weapon_controller.gd" id="6_0l0yx"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="6_ers80"]
-[ext_resource type="Resource" uid="uid://bbfb5mcl6qid8" path="res://assets/resources/weapons/pistol.tres" id="7_3nb03"]
+[ext_resource type="Resource" uid="uid://c2acdbipe82vc" path="res://assets/resources/weapons/fire_bolt.tres" id="7_ii78e"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="7_nwn0c"]
 [ext_resource type="Script" uid="uid://cnxm14583xc8h" path="res://utilities/components/health_component.gd" id="8_ii78e"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="8_y4pjd"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://b35yjsfq01o1v" path="res://scenes/weapons/states/idle_state.gd" id="23_ii78e"]
 [ext_resource type="Script" uid="uid://cdtfoigvkunoa" path="res://scenes/weapons/states/firing_state.gd" id="24_rue81"]
 [ext_resource type="Script" uid="uid://c8ctu525t3oy5" path="res://scenes/weapons/states/empty_state.gd" id="25_fq3by"]
+[ext_resource type="Script" uid="uid://bbquika80735q" path="res://scenes/weapons/states/reloading_state.gd" id="27_rue81"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c1sjb"]
 
@@ -35,7 +36,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uxyin"]
 
-[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST", "HEALTH_COMPONENT") groups=["player"]]
+[node name="PlayerController" type="CharacterBody3D" unique_id=83970830 node_paths=PackedStringArray("CAMERA", "STATE_CHART", "STANDING_COLLISION", "CROUCHING_COLLISION", "CROUCH_CHECK", "INTERACTION_RAYCAST", "HEALTH_COMPONENT", "WEAPON_CONTROLLER") groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_0cfoe")
 CAMERA = NodePath("CameraController")
@@ -45,6 +46,7 @@ CROUCHING_COLLISION = NodePath("CrouchingCollision")
 CROUCH_CHECK = NodePath("ShapeCast3D")
 INTERACTION_RAYCAST = NodePath("CameraController/Camera3D/InteractionRaycast")
 HEALTH_COMPONENT = NodePath("Components/HealthComponent")
+WEAPON_CONTROLLER = NodePath("Components/WeaponController")
 
 [node name="StateChartDebugger" parent="." unique_id=1354678929 instance=ExtResource("2_nwn0c")]
 anchors_preset = 0
@@ -93,7 +95,7 @@ MOUSE_SENSITIVITY = 0.01
 [node name="WeaponController" type="Node" parent="Components" unique_id=10960801 node_paths=PackedStringArray("CAMERA", "WEAPON_MODEL_PARENT", "WEAPON_STATE_CHART")]
 script = ExtResource("6_0l0yx")
 CAMERA = NodePath("../../CameraController/Camera3D")
-CURRENT_WEAPON = ExtResource("7_3nb03")
+CURRENT_WEAPON = ExtResource("7_ii78e")
 WEAPON_MODEL_PARENT = NodePath("../../CameraController/Camera3D")
 WEAPON_STATE_CHART = NodePath("../../WeaponStateChart")
 
@@ -264,6 +266,9 @@ script = ExtResource("7_nwn0c")
 [node name="Empty" type="Node" parent="WeaponStateChart/Root" unique_id=1592827662]
 script = ExtResource("7_nwn0c")
 
+[node name="Reloading" type="Node" parent="WeaponStateChart/Root" unique_id=1925259174]
+script = ExtResource("7_nwn0c")
+
 [node name="OnIdle" type="Node" parent="WeaponStateChart/Root" unique_id=1069902494]
 script = ExtResource("8_y4pjd")
 to = NodePath("../Idle")
@@ -282,6 +287,12 @@ to = NodePath("../Empty")
 event = &"onEmpty"
 delay_in_seconds = "0.0"
 
+[node name="OnReloading" type="Node" parent="WeaponStateChart/Root" unique_id=256654553]
+script = ExtResource("8_y4pjd")
+to = NodePath("../Reloading")
+event = &"onReloading"
+delay_in_seconds = "0.0"
+
 [node name="WeaponStateMachine" type="Node" parent="." unique_id=880598463 node_paths=PackedStringArray("WEAPON_CONTROLLER")]
 unique_name_in_owner = true
 script = ExtResource("22_oal2v")
@@ -295,6 +306,9 @@ script = ExtResource("24_rue81")
 
 [node name="EmptyState" type="Node" parent="WeaponStateMachine" unique_id=1545899813]
 script = ExtResource("25_fq3by")
+
+[node name="ReloadingState" type="Node" parent="WeaponStateMachine" unique_id=1733040116]
+script = ExtResource("27_rue81")
 
 [connection signal="state_physics_processing" from="StateChart/Root/Movement/Grounded" to="StateMachine/MovementState/Grounded State" method="_on_grounded_state_physics_processing"]
 [connection signal="state_processing" from="StateChart/Root/Movement/Grounded/Idle" to="StateMachine/MovementState/Grounded State/IdleState" method="_on_idle_state_processing"]
@@ -313,3 +327,5 @@ script = ExtResource("25_fq3by")
 [connection signal="state_physics_processing" from="WeaponStateChart/Root/Firing" to="WeaponStateMachine/FiringState" method="_on_firing_state_physics_processing"]
 [connection signal="state_entered" from="WeaponStateChart/Root/Empty" to="WeaponStateMachine/EmptyState" method="_on_empty_state_entered"]
 [connection signal="state_processing" from="WeaponStateChart/Root/Empty" to="WeaponStateMachine/EmptyState" method="_on_empty_state_processing"]
+[connection signal="state_entered" from="WeaponStateChart/Root/Reloading" to="WeaponStateMachine/ReloadingState" method="_on_reloading_state_entered"]
+[connection signal="state_physics_processing" from="WeaponStateChart/Root/Reloading" to="WeaponStateMachine/ReloadingState" method="_on_reloading_state_physics_processing"]

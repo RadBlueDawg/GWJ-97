@@ -27,3 +27,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_o5cd4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_w1tfe")
 value = 50.0
 show_percentage = false
+
+[node name="AmmoLabel" type="Label" parent="." unique_id=2084372785]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 49.0
+offset_right = 69.0
+offset_bottom = 72.0
+text = "10 / 10"
