@@ -14,6 +14,7 @@ var loadingScreen: PackedScene = load(SceneRepo.FRAMEWORK.loading_screen)
 func _ready() -> void:
 	gameOver = false
 	var currentLevel = CURRENT_LEVEL_HOLDER.get_children()[0] as Level
+	currentLevel.change_level.connect(_on_change_level)
 	PLAYER_CONTROLLER.global_position = currentLevel.PLAYER_START_POSITION
 	PLAYER_CONTROLLER.HEALTH_COMPONENT.damage_taken.connect(_on_player_damage_taken)
 	PLAYER_CONTROLLER.HEALTH_COMPONENT.died.connect(_on_player_died)
@@ -70,3 +71,15 @@ func _on_player_died() -> void:
 	
 func _on_player_ammo_changed(currentAmmo:int, maxAmmo:int) -> void:
 	PLAYER_HUD.set_ammo_count(currentAmmo, maxAmmo)
+
+func _on_level_zero_spell_selected(selectedSpell: int) -> void:
+	var weaponResource:Weapon
+	match selectedSpell:
+		Enums.SelectableSpells.FIRE_BOLT:
+			weaponResource = ResourceLoader.load(SceneRepo.SPELLS.fire_bolt)
+		Enums.SelectableSpells.ACID_SPLASH:
+			weaponResource = ResourceLoader.load(SceneRepo.SPELLS.acid_splash)
+		Enums.SelectableSpells.LIGHTNING_BOLT:
+			weaponResource = ResourceLoader.load(SceneRepo.SPELLS.lightning_bolt)
+	
+	PLAYER_CONTROLLER.WEAPON_CONTROLLER.set_weapon(weaponResource)

@@ -16,7 +16,13 @@ func _ready() -> void:
 	if CURRENT_WEAPON:
 		spawn_weapon_model()
 		currentAmmo = CURRENT_WEAPON.MAX_AMMO
-		
+
+func set_weapon(newWeapon:Weapon) -> void:
+	CURRENT_WEAPON = newWeapon
+	spawn_weapon_model()
+	currentAmmo = CURRENT_WEAPON.MAX_AMMO
+	ammo_changed.emit(currentAmmo, CURRENT_WEAPON.MAX_AMMO)
+
 func spawn_weapon_model() -> void:
 	if currentWeaponModel:
 		currentWeaponModel.queue_free()

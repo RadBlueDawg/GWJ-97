@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ppiwf6440b6o"]
+
+[ext_resource type="Texture2D" uid="uid://cb5cm3sxgm0dp" path="res://trenchbroom/textures/Dungeon Crawl Stone Soup/vgate_closed_up.png" id="1_bx4bm"]
+
+[resource]
+albedo_texture = ExtResource("1_bx4bm")
+metallic_specular = 0.0
+texture_filter = 2

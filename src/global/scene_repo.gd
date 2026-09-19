@@ -13,3 +13,9 @@ const LEVELS: Dictionary = {
 	"level_one": "uid://bhl1d87hwrwc2",
 	"victory_room": "uid://cld38trh8c31b"
 }
+
+const SPELLS: Dictionary = {
+	"fire_bolt": "uid://c2acdbipe82vc",
+	"acid_splash": "uid://cju0i8qhexa6t",
+	"lightning_bolt": "uid://eit036wah1"
+}

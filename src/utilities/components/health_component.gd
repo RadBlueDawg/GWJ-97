@@ -46,4 +46,7 @@ func _handle_death() -> void:
 	currentHealth = 0.0
 	died.emit()
 	
-	print(owner.name, " died!")
+	if owner:
+		print(owner.name, " died!")
+	else:
+		print("Something from Trenchbroom died!")

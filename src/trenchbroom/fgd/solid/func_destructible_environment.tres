@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" format=3 uid="uid://dudocjtlywram"]
+
+[ext_resource type="Script" uid="uid://5cow84q03m6a" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_idnuy"]
+[ext_resource type="Script" uid="uid://3xck5d4dw0sx" path="res://scenes/environment/destructible_environment.gd" id="2_1nk5c"]
+
+[resource]
+script = ExtResource("1_idnuy")
+script_class = ExtResource("2_1nk5c")
+classname = "func_destructible_environment"
+class_properties = Dictionary[String, Variant]({
+"max_health": 0.0
+})
+node_class = "StaticBody3D"
+metadata/_custom_type_script = "uid://5cow84q03m6a"

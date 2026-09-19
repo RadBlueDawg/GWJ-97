@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4x4dndfhp68h" path="res://scenes/ui/reticle_draw.gd" id="1_lehbl"]
 [ext_resource type="Script" uid="uid://dxo7oct3qnltt" path="res://scenes/main_playspace/managers/game_manager.gd" id="1_pd38t"]
-[ext_resource type="PackedScene" uid="uid://bhl1d87hwrwc2" path="res://levels/level_one.tscn" id="2_e8ton"]
+[ext_resource type="PackedScene" uid="uid://ckrn60wll7jhk" path="res://levels/level_zero.tscn" id="2_a7plv"]
 [ext_resource type="PackedScene" uid="uid://dpr3yrytabwva" path="res://scenes/player/player_controller.tscn" id="3_2a8mv"]
 [ext_resource type="PackedScene" uid="uid://byg0eayikeksf" path="res://scenes/ui/pause_menu.tscn" id="3_e8ton"]
 [ext_resource type="PackedScene" uid="uid://crv06s84svgpu" path="res://scenes/ui/level_switcher.tscn" id="4_pyy7h"]
@@ -25,7 +25,7 @@ ENDGAME_SCREEN = NodePath("../../UserInterface/EndgameScreen")
 
 [node name="CurrentLevel" type="Node3D" parent="." unique_id=159482136]
 
-[node name="LevelOne" parent="CurrentLevel" unique_id=23460073 instance=ExtResource("2_e8ton")]
+[node name="LevelZero" parent="CurrentLevel" unique_id=518496467 instance=ExtResource("2_a7plv")]
 
 [node name="PlayerController" parent="." unique_id=83970830 instance=ExtResource("3_2a8mv")]
 
@@ -59,5 +59,5 @@ grow_vertical = 1
 
 [node name="EndgameScreen" parent="UserInterface" unique_id=416351968 instance=ExtResource("8_a7plv")]
 
-[connection signal="change_level" from="CurrentLevel/LevelOne" to="Managers/GameManager" method="_on_change_level"]
+[connection signal="spell_selected" from="CurrentLevel/LevelZero" to="Managers/GameManager" method="_on_level_zero_spell_selected"]
 [connection signal="switch_level" from="UserInterface/LevelSwitcher" to="Managers/GameManager" method="_on_change_level"]

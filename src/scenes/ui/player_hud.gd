@@ -1,5 +1,8 @@
 class_name PlayerHUD extends Control
 
+func _ready() -> void:
+	$AmmoLabel.text = ""
+
 func set_starting_health(maxHealth:float) -> void:
 	$HealthBar.max_value = maxHealth
 	$HealthBar.value = maxHealth
