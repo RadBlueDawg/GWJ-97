@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bhaxj86w0rkfh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1sjb"]
+bg_color = Color(0, 0, 0, 0.6039216)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxyin"]
+bg_color = Color(1, 1, 1, 0.83137256)
+
+[node name="InputButton" type="Button" unique_id=1643865841]
+custom_minimum_size = Vector2(0, 30)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1sjb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uxyin")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uxyin")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1591927625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=236912727]
+layout_mode = 2
+
+[node name="ActionLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=354596891]
+layout_mode = 2
+mouse_filter = 1
+text = "action name"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1147519176]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="InputLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1301853996]
+layout_mode = 2
+mouse_filter = 1
+text = "input key"
+vertical_alignment = 1

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c20hns53tmr2x" path="res://scenes/ui/main_menu.gd" id="1_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://cs7vmd8n7wh6x" path="res://assets/ui/GWJ-Half-Logo-Orange.svg" id="2_1g8jr"]
+[ext_resource type="PackedScene" uid="uid://56un23gudgyi" path="res://scenes/ui/input_settings.tscn" id="3_1g8jr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxyin"]
 bg_color = Color(0.3403393, 0.34033936, 0.34033918, 1)
@@ -102,7 +103,7 @@ text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=553925747]
 layout_mode = 2
-text = "Options"
+text = "Keybinds"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=30668112]
 layout_mode = 2
@@ -172,6 +173,10 @@ alignment = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Close"
+
+[node name="InputSettings" parent="." unique_id=1627320502 instance=ExtResource("3_1g8jr")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

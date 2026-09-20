@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://56un23gudgyi"]
+
+[ext_resource type="PackedScene" uid="uid://bhaxj86w0rkfh" path="res://scenes/ui/input_button.tscn" id="1_mkdhp"]
+[ext_resource type="Script" uid="uid://cal4utmsvd3bm" path="res://scenes/ui/input_settings.gd" id="1_t2k34"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g585"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
+[node name="InputSettings" type="Control" unique_id=1627320502]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2k34")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=779869898]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8g585")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1039333207]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=124553188]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=660749564]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=400767847]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" unique_id=1643865841 instance=ExtResource("1_mkdhp")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1383810933]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1799097669]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Reset to Defaults"
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=798044489]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1071777314]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
