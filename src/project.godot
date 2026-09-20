@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Enums="*uid://crquq564lxmd"
 SceneLoader="*uid://ceiilpy7j670g"
 SceneRepo="*uid://dlt8vrj4tpaid"
+GlobalData="*uid://6dph4n1ayitd"
 
 [display]
 

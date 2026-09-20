@@ -16,6 +16,9 @@ font_size = 24
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1sjb"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+
 [node name="MainMenu" type="Control" unique_id=74355287]
 layout_mode = 3
 anchors_preset = 15
@@ -44,8 +47,9 @@ offset_top = 22.0
 offset_right = 209.0
 offset_bottom = 110.0
 grow_horizontal = 2
-text = "GWJ-97 Game"
+text = "You Will Die"
 label_settings = SubResource("LabelSettings_c1sjb")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=171121562]
 layout_mode = 1
@@ -108,7 +112,70 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
+[node name="CreditsContainer" type="PanelContainer" parent="." unique_id=1919484366]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c1sjb")
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsContainer" unique_id=1457443213]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsContainer/MarginContainer" unique_id=1323380549]
+layout_mode = 2
+
+[node name="CreditsHeader" type="Label" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=396456523]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=970782123]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditsText" type="RichTextLabel" parent="CreditsContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=95402914]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[center]
+This game was created in 9 days for the [url=https://itch.io/jam/godot-wild-jam-97]Godot Wild Jam #97[/url].
+
+All design and development work was done by Steven Smith (RadBlueDawg on Itch.io and GitHub).
+
+Special thanks to my family and friends, both for their efforts in playtesting and helping me come up with stupid ideas.
+[/center]
+[hr]
+[b]Assets Used[/b]
+StayAtHomeDev's [url=https://www.youtube.com/playlist?list=PLEHvj4yeNfeHtjrRBSqEii1jcDx2yPv6-]Godot FPS Series[/url] was vital in forming the bedrock of the project.
+
+Environment and spell icon sprites from the [url=https://opengameart.org/content/dungeon-crawl-32x32-tiles-supplemental]Dungeon Crawl Stone Soup[/url] pack are licensed under [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal[/url].
+
+The Godot Wild Jam logo was provided in their [url=https://godotwildjam.com/branding/]branding kit[/url].
+
+All other assets were made by myself."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsContainer/MarginContainer/VBoxContainer" unique_id=1721786350]
+layout_mode = 2
+alignment = 2
+
+[node name="CloseCreditsButton" type="Button" parent="CreditsContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=277351017]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Close"
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="meta_clicked" from="CreditsContainer/MarginContainer/VBoxContainer/ScrollContainer/CreditsText" to="." method="_on_credits_text_meta_clicked"]
+[connection signal="pressed" from="CreditsContainer/MarginContainer/VBoxContainer/HBoxContainer/CloseCreditsButton" to="." method="_on_close_credits_button_pressed"]

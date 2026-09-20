@@ -10,6 +10,8 @@ signal spell_selected(selectedSpell:Enums.SelectableSpells)
 const overlayTextBBCode:String = "[outline_color=black][outline_size=15][color=red][font_size=72]"
 
 func _ready() -> void:
+	super._ready()
+	
 	OVERLAY_TEXT_LABEL.text = ""
 	await get_tree().create_timer(1.0).timeout
 	_display_overlay("CHOOSE YOUR SPELL")
