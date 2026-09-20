@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://byg0eayikeksf"]
 
 [ext_resource type="Script" uid="uid://cygog50h0kbc7" path="res://scenes/ui/pause_menu.gd" id="1_6tw0m"]
+[ext_resource type="PackedScene" uid="uid://56un23gudgyi" path="res://scenes/ui/input_settings.tscn" id="2_0lmf7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c1sjb"]
 font_size = 24
@@ -64,12 +65,15 @@ text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1321180897]
 layout_mode = 2
-text = "Options
-"
+text = "Keybinds"
 
 [node name="QuitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1180472385]
 layout_mode = 2
 text = "Quit"
+
+[node name="InputSettings" parent="." unique_id=1627320502 instance=ExtResource("2_0lmf7")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
