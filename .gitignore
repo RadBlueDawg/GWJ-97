@@ -19,3 +19,6 @@ mono_crash.*.json
 
 # Trenchbroom ignores
 src/trenchbroom/maps/autosave/*.map
+
+# This is where I have Godot set to throw the exports
+build/
